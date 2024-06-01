@@ -1,0 +1,92 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-commentary'
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set which-key
+set exchange
+Plug 'machakann/vim-highlightedyank'
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" <C-n> seems to me as a better solution than <M-n>,
+" but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
+map <C-n> <Plug>NextWholeOccurrence
+let g:WhichKey_ShowVimActions = "true"
+set which-key
+set notimeout
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set incsearch
+map Q gq
+set relativenumber
+""" Idea specific settings ------------------
+set ideajoin
+        return AIEmotion::whereIn('id', $emotionIds)->get()->pluck('id')->toArray();
+set ideastatusicon=gray
+""" My Mappings -----------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>0 <Action>(PhpListenDebugAction);
+map <leader>r <Action>(RenameElement)
+map <leader>c <Action>(Stop)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>q <Action>(CloseActiveTab)
+map <leader>g <Action>(Vcs.QuickListPopup)
+map <leader>u <Action>(Vcs.UpdateProject)
+map <leader>9 <Action>(Rerun)
+
+map <leader>s <Action>(SelectInProjectView)
+map <leader>a <Action>(Annotate)
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <S-Space> <Action>(GotoNextError)
+
+" Reformat the current line only
+map <leader>l V<Action>(ReformatCode)
+
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(FileStructurePopup)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+" Map which key to show all the actions
+
+map <leader>J Ji <ESC>
+map <leader><leader> <Action>(SearchEverywhere)
+
+" Just makes me nervous
+map H h
+
+" Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
+map <leader>i ~hi
+" Remove selection and toggle case. E.g. `v2l<leader>u`: `getProperty` -> `property`
+vmap <leader>u d~h
+
+" I think it's a better solution
+map U <C-R>
+" Source your .vimrc
+source ~/.vimrc
+source ~/.vimrc.local
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+set incsearch
+map Q gq
