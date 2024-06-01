@@ -1,6 +1,6 @@
 export ZSH="/Users/shaun/.oh-my-zsh"
 
-ZSH_THEME="jonathan"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 plugins=(git httpie laravel web-search docker docker-compose jira colored-man-pages vscode artisan tmux golang)
 
@@ -17,6 +17,7 @@ path+=/Users/shaun/.local/bin
 
 source ~/.alias.sh
 source ~/.secretManagerCommands.sh
+source ~/.powerlevel.conf
 
 setVim lvim
 
