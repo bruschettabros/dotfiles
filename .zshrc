@@ -40,4 +40,6 @@ eval $(thefuck --alias)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-neofetch --ascii_distro windows
+distros=("arch" "mint" "manjaro" "windows" "debian" "ubuntu" "fedora" "kali" "netrunner" "netbsd")
+distro=${distros[ $RANDOM % ${#distros[@]} ]}
+neofetch --ascii_distro $distro  | lolcat -t

@@ -40,18 +40,21 @@ alias phpp="PHP_IDE_CONFIG='serverName=evaluagent.test' \
     -dxdebug.start_with_request=yes \
     -dxdebug.output_dir=/Users/shaun/Projects/Profiler"
 alias uuid=uuidgen
-alias poke="fortune | pokemonsay -n -w 45"
+alias poke="fortune | pokemonsay -n -w 30"
 #Functions
 update-all() {
 omz update
 brew update
 lvim +LvimUpdate +q
 }
+
 fresize () {
     ffmpeg -i "$1" -vf scale=$3:-1 "$2" 
 }
+
 vs () {"$@" | v -}
 cheat () {curl cheat.sh/"$@" | less}
+
 scheckout () {
     git stash;
     git checkout $1;
@@ -62,12 +65,6 @@ git checkout develop;
 git pull;
 git checkout -;
 git merge develop;
-}
-
-updatevim() {
-cd $HOME/.spf13-vim-3
-git pull
-vim +BundleInstall! +BundleClean +q
 }
 
 setVim () {
