@@ -1,5 +1,9 @@
 #Aliases
+alias copy="pbcopy"
+alias paste="pbpaste"
 alias so="exec zsh"
+alias c="clear"
+alias cat="bat"
 alias v="vim"
 alias artisan="/Users/shaun/Projects/evaluagent/evaluagent/artisan"
 alias ll='ls -larh'
@@ -38,9 +42,21 @@ alias phpp="PHP_IDE_CONFIG='serverName=evaluagent.test' \
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 45"
 #Functions
+update-all() {
+omz update
+brew update
+lvim +LvimUpdate +q
+}
+fresize () {
+    ffmpeg -i "$1" -vf scale=$3:-1 "$2" 
+}
 vs () {"$@" | v -}
 cheat () {curl cheat.sh/"$@" | less}
-
+scheckout () {
+    git stash;
+    git checkout $1;
+    git stash pop;
+}
 merge-develop() {
 git checkout develop;
 git pull;
