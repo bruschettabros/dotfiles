@@ -1,4 +1,4 @@
-export ZSH="/Users/shaun/.oh-my-zsh"
+export ZSH=$HOME"/.oh-my-zsh"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -28,7 +28,9 @@ cd ~/dotfiles
 # This generates a script that can be installed via:
 # brew bundle install --file ~/Brewfile
 rm -f ~/dotfiles/Brewfile
+rm -f ~/dotfiles/Brewfile.$OS
 brew bundle dump
+mv Brewfile Brewfile.$OS
 stow .
 cd -
 
