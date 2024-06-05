@@ -33,6 +33,7 @@ brew "htop"
 brew "jq"
 brew "lazygit"
 brew "libfido2"
+brew "lolcat"
 brew "lua"
 brew "md5sha1sum", link: false
 brew "mysql-client"
