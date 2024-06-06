@@ -14,9 +14,6 @@ brew bundle install --file=~/.dotfiles/Brewfile.$OS || echo "No Brewfile for $OS
 #Lvim
 LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 
-#My neovim config
-git clone git@github.com:bruschettabros/neovim.git ~/.config/lvim
-
 #Stow dotfiles
 cd ~/.dotfiles
 stow .
