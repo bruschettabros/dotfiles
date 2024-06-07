@@ -6,6 +6,11 @@ plugins=(git httpie laravel web-search docker docker-compose jira colored-man-pa
 
 source $ZSH/oh-my-zsh.sh
 
+#Linux related Brew 
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+
 path+=/usr/local/opt/mysql-client/bin/
 path+=$HOME/.composer/vendor/bin/
 path+=$HOME/.config/composer/vendor/bin
