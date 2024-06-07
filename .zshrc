@@ -11,13 +11,13 @@ test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 
+path+=$HOME/.local/bin
+path+=/Users/shaun/.local/bin
 path+=/usr/local/opt/mysql-client/bin/
 path+=$HOME/.composer/vendor/bin/
 path+=$HOME/.config/composer/vendor/bin
 path+=$HOME/.config/toolbox
-path+=$HOME/.local/bin
 path+=/opt/homebrew/Cellar/bin
-path+=/Users/shaun/.local/bin
 
 
 source ~/.alias.sh
@@ -34,6 +34,7 @@ export PATH="/usr/local/sbin:$PATH"
 export EDITOR='lvim'
 
 cd ~/dotfiles
+git pull
 # This generates a script that can be installed via:
 # brew bundle install --file ~/Brewfile
 rm -f ~/dotfiles/Brewfile
