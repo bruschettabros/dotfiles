@@ -19,6 +19,10 @@ source ~/.alias.sh
 source ~/.secretManagerCommands.sh
 source ~/.powerlevel.conf
 
+#todo: Fix
+# source $(brew --prefix)/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 setVim lvim
 
 export PATH="/usr/local/sbin:$PATH"

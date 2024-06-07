@@ -52,7 +52,7 @@ fresize () {
     ffmpeg -i "$1" -vf scale=$3:-1 "$2" 
 }
 
-vs () {"$@" | v -}
+vs () {"$@" | v - }
 cheat () {curl cheat.sh/"$@" | less}
 
 scheckout () {
@@ -84,4 +84,3 @@ tatt() {
 tkill() {
     tmux kill-session -t $1
 }
-
