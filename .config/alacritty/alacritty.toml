@@ -11,11 +11,11 @@ padding.y = 5
 opacity = 0.9
 blur = true
 startup_mode = "Maximized"
-decorations = "Buttonless"
+decorations = "None"
 
 [font]
 normal.family = "Hack Nerd Font Mono"
-offset = {y = 9, x = 1.2}
+offset = {y = 9, x = 1}
 size = 17
 
 [cursor]
