@@ -1,3 +1,4 @@
 .config/lvim/sessions
 .config/lvim/lazy-lock.json
 .config/lvim/session/
+.config/lvim/.DS_Store

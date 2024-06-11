@@ -41,6 +41,7 @@ alias phpp="PHP_IDE_CONFIG='serverName=evaluagent.test' \
     -dxdebug.output_dir=/Users/shaun/Projects/Profiler"
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
+alias editterm="v /Users/shaun/dotfiles/.config/alacritty/alacritty.toml"
 #Functions
 update-all() {
 omz update
@@ -58,6 +59,7 @@ cheat () {curl cheat.sh/"$@" | less}
 scheckout () {
     git stash;
     git checkout $1;
+    git pull
     git stash pop;
 }
 merge-develop() {
