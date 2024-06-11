@@ -15,7 +15,7 @@ decorations = "None"
 
 [font]
 normal.family = "Hack Nerd Font Mono"
-offset = {y = 9, x = 1}
+offset = {y = 10, x = 1}
 size = 17
 
 [cursor]
