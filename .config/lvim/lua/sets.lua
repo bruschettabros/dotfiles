@@ -1,25 +1,27 @@
-vim.opt.relativenumber = true
+local opt = vim.opt
 
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+opt.relativenumber = true
 
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.smarttab = true
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.tabstop = 4
 
-vim.opt.wrap = true
-vim.opt.list = true
-vim.opt.cursorline = true
+opt.expandtab = true
+opt.smartindent = true
+opt.smarttab = true
 
-vim.opt.incsearch = true
-vim.opt.smartcase = true
+opt.wrap = true
+opt.list = true
+opt.cursorline = true
 
-vim.opt.encoding = "utf-8"
-vim.opt.syntax = "on"
+opt.incsearch = true
+opt.smartcase = true
 
-vim.opt.history = 1000
-vim.opt.spell = true
-vim.opt.shell = "/bin/zsh"
+opt.encoding = "utf-8"
+opt.syntax = "on"
 
-vim.opt.autoread = true
+opt.history = 1000
+opt.spell = true
+opt.shell = "/bin/zsh"
+
+opt.autoread = true
