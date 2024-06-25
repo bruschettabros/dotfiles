@@ -50,7 +50,7 @@ lvim +LvimUpdate +q
 }
 
 fresize () {
-    ffmpeg -i "$1" -vf scale=$3:-1 "$2" 
+    ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2" 
 }
 
 vs () {"$@" | v - }
