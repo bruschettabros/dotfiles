@@ -39,7 +39,6 @@ map Q gq
 set relativenumber
 """ Idea specific settings ------------------
 set ideajoin
-        return AIEmotion::whereIn('id', $emotionIds)->get()->pluck('id')->toArray();
 set ideastatusicon=gray
 """ My Mappings -----------------------------
 map <leader>f <Plug>(easymotion-s)

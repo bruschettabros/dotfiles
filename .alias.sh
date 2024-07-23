@@ -42,7 +42,23 @@ alias phpp="PHP_IDE_CONFIG='serverName=evaluagent.test' \
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
 alias editterm="v /Users/shaun/dotfiles/.config/alacritty/alacritty.toml"
+
 #Functions
+mkcd() {
+mkdir -p "$1" && cd "$1";
+}
+
+gpush() {
+git stash && git checkout $1 && git fetch && git pull && git merge - && git push && git checkout - && git stash pop
+}
+
+change() {
+git stash && git checkout $1 && git stash pop
+
+}
+countpods() {
+kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
+}
 update-all() {
 omz update
 brew update
