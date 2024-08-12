@@ -89,6 +89,11 @@ setVim () {
 alias vim="$1"
 }
 
+#Kubernetes
+alias k=kubectl
+alias kgp="k get pods"
+alias kgd="k get deploy"
+
 #Tmux related
 alias t="tmux"
 alias tl="tmux ls"
