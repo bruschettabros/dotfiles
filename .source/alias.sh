@@ -26,6 +26,7 @@ alias awssso="sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.sh -f  /U
 alias a="artisan"
 alias at="a tinker"
 alias am="a migrate"
+alias dump="composer dump"
 alias phpx="PHP_IDE_CONFIG='serverName=Evaluagent.test' \
     php \
     -dxdebug.mode=debug \
@@ -67,6 +68,10 @@ lvim +LvimUpdate +q
 
 fresize () {
     ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2" 
+}
+
+jqp() {
+    jq  <<< "$1"
 }
 
 vs () {"$@" | v - }

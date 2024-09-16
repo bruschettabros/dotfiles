@@ -6,10 +6,6 @@ plugins=(git httpie laravel web-search docker docker-compose jira colored-man-pa
 
 source $ZSH/oh-my-zsh.sh
 
-#Linux related Brew 
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 
 path+=$HOME/.local/bin
 path+=/Users/shaun/.local/bin
@@ -19,43 +15,23 @@ path+=$HOME/.config/composer/vendor/bin
 path+=$HOME/.config/toolbox
 path+=/opt/homebrew/Cellar/bin
 
+export PATH="/usr/local/sbin:$PATH"
 
-source ~/.alias.sh
-source ~/.secretManagerCommands.sh
+source ~/.source/variables.sh
+source ~/.source/alias.sh
+source ~/.source/secretManagerCommands.sh
 source ~/.powerlevel.conf
 
-#todo: Fix
-# source $(brew --prefix)/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.source/stow.sh
+source ~/.source/brew.sh
+source ~/.source/motd.sh
 
 setVim lvim
-
-export PATH="/usr/local/sbin:$PATH"
 export EDITOR='lvim'
-
-cd ~/dotfiles
-git pull
-# This generates a script that can be installed via:
-# brew bundle install --file ~/Brewfile
-rm -f ~/dotfiles/Brewfile
-rm -f ~/dotfiles/Brewfile.$OS
-brew bundle dump
-mv Brewfile Brewfile.$OS
-stow .
-cd -
 
 eval $(thefuck --alias)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-distros=("arch" "mint" "manjaro" "windows" "debian" "ubuntu" "fedora" "kali" "netrunner" "netbsd")
-distro=${distros[ $RANDOM % ${#distros[@]} ]}
-neofetch --ascii_distro $distro  | lolcat -t
-
-
-
- export NVM_DIR="$HOME/.nvm"
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
