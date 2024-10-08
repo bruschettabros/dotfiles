@@ -17,6 +17,7 @@ source ~/.source/stow.sh
 source ~/.source/brew.sh
 source ~/.source/motd.sh
 source ~/.source/tmux.sh
+source ~/.source/completions.sh
 
 setVim lvim
 export EDITOR='lvim'
