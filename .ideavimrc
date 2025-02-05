@@ -1,68 +1,18 @@
 let mapleader= " "
 
-" Plugins
-set surround
-set ideavim-sneak
-set multiple-cursors
-set commentary
-set argtextobj
-set easymotion
-set textobj-entire
-set peekaboo
-set functiontextobj
-set ReplaceWithRegister
-set exchange
-set vim-paragraph-motion
-set textobj-indent
-set NERDTree
-set which-key
-Plug 'machakann/vim-highlightedyank'
+source ~/.vimrc
+source ~/ideavim/plugins.vim
+source ~/ideavim/plugins.vim
 
 " Plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
+" Which key
 set notimeout
-
-" Common settings
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmode
-set number
-set so=5
-map Q gq
-set relativenumber
-set scrolloff=5
-set history=100
-set clipboard=unnamed
-set foldmethod=syntax
-set nofoldenable
-set nocompatible
-set wildmenu
-set laststatus=2
-set ruler
-set nowrap
-set expandtab
-set shiftwidth=1 
-
 " Idea specific settings
 set ideajoin
-
 " Strict mode for development
 set ideastrictmode
 
-" Functions
-function! example(i)
-    echo a:i " with additional text"
-endfunction
-
-function! ide()
-    echo &ide
-endfunction
-
-function! ghc()
-    :action com.laravel_idea.plugin.GenerateHelperCodeAction
-endfunction
 
 " Laravel idea
 nnoremap <leader>li :action LaravelIdea<CR>
@@ -175,6 +125,7 @@ map <leader><leader> :action fastTravel.jumper<CR>
 " Command starters
 nnoremap <leader>g- :!git
 nnoremap <leader>m- :!make
+nnoremap <leader>l- :call ghc()
 nnoremap<leader>aws :!sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.sh -f  /Users/shaun/Projects/evaluagent/evaluagent/.env
 
 " Tab operation
