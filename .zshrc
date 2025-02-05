@@ -16,11 +16,11 @@ source ~/.source/secretManagerCommands.sh
 source ~/.source/stow.sh
 source ~/.source/brew.sh
 source ~/.source/motd.sh
-source ~/.source/tmux.sh
+# source ~/.source/tmux.sh
 source ~/.source/completions.sh
 
-setVim lvim
-export EDITOR='lvim'
+setVim nvim
+export EDITOR='nvim'
 
 eval $(thefuck --alias)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
