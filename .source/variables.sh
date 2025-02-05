@@ -1,4 +1,5 @@
-export BREW=false
+export BREW=true
 export STOW=true
 export MOTD=false
-export DEFAULT_TMUX=true
+export DEFAULT_TMUX=false
+

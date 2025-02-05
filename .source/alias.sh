@@ -3,7 +3,7 @@ alias copy="pbcopy"
 alias paste="pbpaste"
 alias so="exec zsh"
 alias c="clear"
-alias cat="bat"
+#alias cat="bat"
 alias v="vim"
 alias artisan="/Users/shaun/Projects/evaluagent/evaluagent/artisan"
 alias ll='ls -larh'
@@ -53,6 +53,10 @@ gpush() {
 git stash && git checkout $1 && git fetch && git pull && git merge - && git push && git checkout - && git stash pop
 }
 
+topcommands () {
+    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -$1
+}
+
 change() {
 git stash && git checkout $1 && git stash pop
 
@@ -90,8 +94,14 @@ git checkout -;
 git merge develop;
 }
 
-setVim () {
+setVim() {
 alias vim="$1"
+}
+
+analyse() {
+# $1 = integrationId
+# $2 = fcUuid
+php artisan analytics:dispatch-single-fetched-contact-for-analytics $1 $2
 }
 
 #Kubernetes

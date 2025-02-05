@@ -1,92 +1,182 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
+let mapleader= " "
 
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-
-""" Plugins  --------------------------------
-Plug 'justinmk/vim-sneak'
-Plug 'tpope/vim-commentary'
+" Plugins
 set surround
+set ideavim-sneak
 set multiple-cursors
 set commentary
 set argtextobj
 set easymotion
 set textobj-entire
+set peekaboo
+set functiontextobj
 set ReplaceWithRegister
-set which-key
 set exchange
+set vim-paragraph-motion
+set textobj-indent
+set NERDTree
+set which-key
 Plug 'machakann/vim-highlightedyank'
 
-""" Plugin settings -------------------------
+" Plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
-
-" <C-n> seems to me as a better solution than <M-n>,
-" but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
-map <C-n> <Plug>NextWholeOccurrence
-let g:WhichKey_ShowVimActions = "true"
-set which-key
 set notimeout
-""" Common settings -------------------------
+
+" Common settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 set showmode
+set number
 set so=5
-set incsearch
-set nu
-set incsearch
 map Q gq
 set relativenumber
-""" Idea specific settings ------------------
-set ideajoin
-set ideastatusicon=gray
-""" My Mappings -----------------------------
-map <leader>f <Plug>(easymotion-s)
-map <leader>e <Plug>(easymotion-f)
-
-map <leader>0 <Action>(PhpListenDebugAction);
-map <leader>r <Action>(RenameElement)
-map <leader>c <Action>(Stop)
-map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader>q <Action>(CloseActiveTab)
-map <leader>g <Action>(Vcs.QuickListPopup)
-map <leader>u <Action>(Vcs.UpdateProject)
-map <leader>9 <Action>(Rerun)
-
-map <leader>s <Action>(SelectInProjectView)
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
-
-" Reformat the current line only
-map <leader>l V<Action>(ReformatCode)
-
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>o <Action>(FileStructurePopup)
-nmap <leader>t <Action>(ActivateTerminalToolWindow)
-nmap <leader>R <action>(PasteMultiple)
-" Map which key to show all the actions
-
-map <leader>J Ji <ESC>
-map <leader><leader> <Action>(SearchEverywhere)
-
-" Just makes me nervous
-map H h
-
-" Toggle case and start typing. E.g. `<leader>iget`: `property` -> `getProperty`
-map <leader>i ~hi
-" Remove selection and toggle case. E.g. `v2l<leader>u`: `getProperty` -> `property`
-vmap <leader>u d~h
-
-" I think it's a better solution
-map U <C-R>
-" Source your .vimrc
-source ~/.vimrc
-source ~/.vimrc.local
-
-"" -- Suggested options --
-" Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
-set incsearch
-map Q gq
+set history=100
+set clipboard=unnamed
+set foldmethod=syntax
+set nofoldenable
+set nocompatible
+set wildmenu
+set laststatus=2
+set ruler
+set nowrap
+set expandtab
+set shiftwidth=1 
+
+" Idea specific settings
+set ideajoin
+
+" Strict mode for development
+set ideastrictmode
+
+" Functions
+function! example(i)
+    echo a:i " with additional text"
+endfunction
+
+function! ide()
+    echo &ide
+endfunction
+
+function! ghc()
+    :action com.laravel_idea.plugin.GenerateHelperCodeAction
+endfunction
+
+" Laravel idea
+nnoremap <leader>li :action LaravelIdea<CR>
+nnoremap <leader>lg :call ghc()<CR>
+
+" effective
+nnoremap <Leader>sw :action SurroundWith<CR>
+nnoremap <Leader>oi :action OptimizeImports<CR>
+nnoremap <Leader>tz :action ToggleZenMode<CR> 
+nnoremap <leader>ns :action NewScratchFile<CR>
+nnoremap <Leader>ic :action InspectCode<CR>
+nnoremap <CR> a<CR><Esc>k$
+nnoremap U <C-R>
+nnoremap dam :action MethodUp<CR>f{vi{:g/^$/d<CR>dap
+nnoremap <leader>cr :action CollapseRegion<CR>
+nnoremap <leader>er :action ExpandRegion<CR>
+nnoremap <leader>ff :action SelectInProjectView<CR>
+
+" Window
+nnoremap <Leader>ww <C-W>w
+nnoremap <Leader>wd <C-W>c
+nnoremap <Leader>aj <C-W>j
+nnoremap <Leader>ak <C-W>k
+nnoremap <Leader>ah <C-W>h
+nnoremap <Leader>al <C-W>l
+nnoremap <Leader>ws <C-W>s
+nnoremap <Leader>wv <C-W>v
+nnoremap <Leader>ot :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>sr :reg<CR>
+nnoremap <leader>sm :marks<CR>
+nnoremap <Leader>ov :vs ~/.ideavimrc
+nnoremap <Leader>oe :vs ~/Projects/Evaluagent/Evaluagent/.env<CR>
+
+" Fix
+nnoremap <Leader>fd :action FixDocComment<CR>
+nnoremap <Leader>rn :action RenameElement<CR>
+nnoremap <Leader>mf :action RenameFile<CR>
+nnoremap <Leader>fc :action ReformatCode<CR>
+vnoremap <Leader>em :action ExtractMethod<CR>
+vnoremap <Leader>ei :action ExtractInterface<CR>
+nnoremap <Leader>vl ^v$
+nnoremap <leader>ph :action PasteMultiple <CR>
+
+" Git
+nnoremap <Leader>gp :action Vcs.QuickListPopupAction<CR>
+nnoremap <Leader>gb :action Git.Branches<CR>
+nnoremap <leader>gh :action Git.ShowTabbedFileHistory<CR>
+nnoremap <leader>rl :action Vcs.RollbackChangedLines<CR> 
+
+" Generate
+nnoremap <Leader>im :action ImplementMethods<CR>
+nnoremap <Leader>om :action OverrideMethods<CR>
+nnoremap <Leader>nc :action NewClass<CR>
+
+" Debug
+nnoremap <leader>tb :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>sb :action ViewBreakpoints<CR>
+nnoremap <leader>0 :action PhpListenDebugAction<CR>
+nnoremap <leader>ld :action PhpListenDebugAction<CR>
+nnoremap <leader>ee :action EvaluateExpression <CR>
+nnoremap <leader>so :action StepOver <CR>
+nnoremap <leader>si :action StepInto <CR>
+nnoremap <leader>ss :action Stop <CR>
+
+" Start and stop
+nnoremap <Leader>d :action Debug<CR>
+nnoremap <Leader>rc :action Stop<CR>
+nnoremap <Leader>rr :action Rerun<CR>
+nnoremap <leader>ra :action RunAnything<CR>
+nnoremap <leader>ec :action editRunConfigurations<CR>
+nnoremap <Leader>rm :action RunClass<CR>
+nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
+nnoremap <Leader>cr :action ChooseRunConfiguration<CR>
+
+" Show
+nnoremap <Leader>sd :action ShowUmlDiagram<CR>
+nnoremap <Leader>th :action TypeHierarchy<CR>
+nnoremap <Leader>fu :action FindUsages<CR>
+nnoremap <Leader>su :action ShowUsages<CR>
+nnoremap <Leader>mh :action MethodHierarchy<CR>
+nnoremap <Leader>sp :action ShowFilePath<CR>
+nnoremap <Leader>se :action ShowErrorDescription<CR>
+nnoremap <Leader>rf :action RecentFiles<CR>
+nnoremap <Leader>jd :action QuickJavaDoc<CR>
+nnoremap <leader>aa :action Annotate<CR>
+nnoremap <leader>sn :action ShowNavBar<CR>
+
+" popup
+nnoremap <Leader>oo :action FileStructurePopup<CR>
+nnoremap <leader>pg :action Generate<CR>
+nnoremap <Leader>pm :action ShowPopupMenu<CR>
+
+" Search
+nnoremap <Leader>ga :action GotoAction<CR>
+nnoremap <Leader>gc :action GotoClass<CR>
+nnoremap <Leader>gf :action GotoFile<CR>
+nnoremap <Leader>gs :action GotoSymbol<CR>
+
+" Jump
+nnoremap ge :action GotoNextError<CR>
+nnoremap ne :action GotoNextError<CR>
+nnoremap nE :action GotoPreviousError<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap [[ :action MethodUp<CR>
+nnoremap gf :NERDTree <CR>
+map <leader><leader> :action fastTravel.jumper<CR>
+
+" Command starters
+nnoremap <leader>g- :!git
+nnoremap <leader>m- :!make
+nnoremap<leader>aws :!sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.sh -f  /Users/shaun/Projects/evaluagent/evaluagent/.env
+
+" Tab operation
+nnoremap gn gt
+nnoremap gp gT
