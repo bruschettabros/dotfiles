@@ -19,8 +19,8 @@ source ~/.source/motd.sh
 # source ~/.source/tmux.sh
 source ~/.source/completions.sh
 
-setVim nvim
-export EDITOR='nvim'
+setVim lvim
+export EDITOR='lvim'
 
 eval $(thefuck --alias)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
