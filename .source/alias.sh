@@ -78,8 +78,13 @@ jqp() {
     jq  <<< "$1"
 }
 
-vs () {"$@" | v - }
-cheat () {curl cheat.sh/"$@" | less}
+vs () {
+  "$@" | v - 
+}
+
+cheat () {
+  curl cheat.sh/"$@" | less
+}
 
 scheckout () {
     git stash;
@@ -92,10 +97,6 @@ git checkout develop;
 git pull;
 git checkout -;
 git merge develop;
-}
-
-setVim() {
-alias vim="$1"
 }
 
 analyse() {
