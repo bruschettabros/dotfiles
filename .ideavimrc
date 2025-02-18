@@ -1,8 +1,10 @@
 let mapleader= " "
 
 source ~/.vimrc
+source ~/ideavim/functions.vim
 source ~/ideavim/plugins.vim
-source ~/ideavim/plugins.vim
+
+
 
 " Plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -12,7 +14,6 @@ set notimeout
 set ideajoin
 " Strict mode for development
 set ideastrictmode
-
 
 " Laravel idea
 nnoremap <leader>li :action LaravelIdea<CR>
@@ -30,6 +31,8 @@ nnoremap dam :action MethodUp<CR>f{vi{:g/^$/d<CR>dap
 nnoremap <leader>cr :action CollapseRegion<CR>
 nnoremap <leader>er :action ExpandRegion<CR>
 nnoremap <leader>ff :action SelectInProjectView<CR>
+nnoremap <leader>sf ^v$j%$
+nnoremap <leader>sc ^v$%$
 
 " Window
 nnoremap <Leader>ww <C-W>w
@@ -53,8 +56,8 @@ nnoremap <Leader>mf :action RenameFile<CR>
 nnoremap <Leader>fc :action ReformatCode<CR>
 vnoremap <Leader>em :action ExtractMethod<CR>
 vnoremap <Leader>ei :action ExtractInterface<CR>
-nnoremap <Leader>vl ^v$
 nnoremap <leader>ph :action PasteMultiple <CR>
+nnoremap V V$
 
 " Git
 nnoremap <Leader>gp :action Vcs.QuickListPopupAction<CR>
@@ -99,6 +102,9 @@ nnoremap <Leader>rf :action RecentFiles<CR>
 nnoremap <Leader>jd :action QuickJavaDoc<CR>
 nnoremap <leader>aa :action Annotate<CR>
 nnoremap <leader>sn :action ShowNavBar<CR>
+nnoremap <leader>ti :action EditorIncreaseFontSize<CR>
+nnoremap <leader>td :action EditorDecreaseFontSize<CR>
+nnoremap <leader>tr :action EditorResetFontSize<CR>
 
 " popup
 nnoremap <Leader>oo :action FileStructurePopup<CR>
@@ -108,7 +114,7 @@ nnoremap <Leader>pm :action ShowPopupMenu<CR>
 " Search
 nnoremap <Leader>ga :action GotoAction<CR>
 nnoremap <Leader>gc :action GotoClass<CR>
-nnoremap <Leader>gf :action GotoFile<CR>
+"nnoremap <Leader>gf :action GotoFile<CR>
 nnoremap <Leader>gs :action GotoSymbol<CR>
 
 " Jump
@@ -119,7 +125,7 @@ nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap ]] :action MethodDown<CR>
 nnoremap [[ :action MethodUp<CR>
-nnoremap gf :NERDTree <CR>
+nnoremap nt :NERDTree <CR>
 map <leader><leader> :action fastTravel.jumper<CR>
 
 " Command starters
@@ -130,4 +136,7 @@ nnoremap<leader>aws :!sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.s
 
 " Tab operation
 nnoremap gn gt
-nnoremap gp gT
+noremap gp gT
+
+" Coilot 
+nnoremap <leader>cc :action copilot.requestCompletions<CR>
