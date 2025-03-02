@@ -44,7 +44,9 @@ nnoremap <Leader>al <C-W>l
 nnoremap <Leader>ws <C-W>s
 nnoremap <Leader>wv <C-W>v
 nnoremap <Leader>ot :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>sr :reg<CR>
+nnoremap <Leader>clr :action CloseAllToTheRight<CR>
+nnoremap <Leader>clu :action CloseAllUnmodifiedEditors<CR>
+noremap <leader>sr :reg<CR>
 nnoremap <leader>sm :marks<CR>
 nnoremap <Leader>ov :vs ~/.ideavimrc
 nnoremap <Leader>oe :vs ~/Projects/Evaluagent/Evaluagent/.env<CR>
