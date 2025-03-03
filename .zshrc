@@ -11,8 +11,8 @@ source $ZSH/oh-my-zsh.sh
 setVim() {
 alias vim="$@"
 }
-setVim lvim
-export EDITOR='lvim'
+setVim nvim
+export EDITOR='nvim'
 
 source ~/.source/path.sh
 source ~/.source/variables.sh

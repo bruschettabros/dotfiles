@@ -9,9 +9,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #Brewfile
 brew bundle install --file=~/.dotfiles/Brewfile.$OSTYPE || echo "No Brewfile for $OSTYPE"
 
-#Lvim
-LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
-
+#LazyVim
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 
 #Stow dotfiles
 cd ~/.dotfiles

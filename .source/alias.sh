@@ -64,6 +64,7 @@ git stash && git checkout $1 && git stash pop
 countpods() {
 kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
 }
+
 update-all() {
 omz update
 brew update
@@ -71,6 +72,7 @@ lvim +LvimUpdate +q
 }
 
 fresize () {
+    #arguments: 1 = output, 2 = output, 3 = width
     ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2" 
 }
 
