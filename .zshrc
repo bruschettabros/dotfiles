@@ -4,7 +4,7 @@ export ZSH=$HOME"/.oh-my-zsh"
 # ZSH_THEME="jonathon"
 ZSH_THEME="fino-time"
 
-plugins=(git httpie laravel web-search docker docker-compose jira colored-man-pages vscode artisan tmux golang)
+plugins=(iterm2 git httpie laravel web-search docker docker-compose jira colored-man-pages vscode artisan tmux golang)
 
 source $ZSH/oh-my-zsh.sh
 
