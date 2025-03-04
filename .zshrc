@@ -17,8 +17,8 @@ export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
 export EMAIL='shaun.collins@evaluagent.com'
-GIT_COMMITTER_EMAIL=$EMAIL
-GIT_AUTHOR_EMAIL=$EMAIL
+export GIT_COMMITTER_EMAIL=$EMAIL
+export GIT_AUTHOR_EMAIL=$EMAIL
 
 source ~/.source/path.sh
 source ~/.source/variables.sh
