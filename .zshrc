@@ -8,17 +8,18 @@ plugins=(iterm2 git httpie laravel web-search docker docker-compose jira colored
 
 source $ZSH/oh-my-zsh.sh
 
-setVim() {
-alias vim="$@"
-}
-setVim nvim
+export EMAIL='shaun.collins@evaluagent.com'
+export GIT_COMMITTER_EMAIL=$EMAIL
+export GIT_AUTHOR_EMAIL=$EMAIL
+
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
-export EMAIL='shaun.collins@evaluagent.com'
-export GIT_COMMITTER_EMAIL=$EMAIL
-export GIT_AUTHOR_EMAIL=$EMAIL
+setVim() {
+alias vim="$@"
+}
+setVim $EDITOR
 
 source ~/.source/path.sh
 source ~/.source/variables.sh
@@ -33,6 +34,5 @@ source ~/.source/bindings.sh
 
 source ~/.source/completions.sh
 source ~/.source/nvm.sh
-
 
 uptime

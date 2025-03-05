@@ -11,7 +11,7 @@ brew install stow
 
 Once you have pulled down this repo: 
  - `cd` into repo
- - Remvove/backup existing dotfile
+ - Remove/backup existing dotfile
 ```
 cd ~ && mkdir dotbackup &&  mv .* dotbackup/
 ```
