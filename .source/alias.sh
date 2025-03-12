@@ -18,14 +18,11 @@ alias gs="git status"
 alias sail="./vendor/bin/sail"
 alias s="sail"
 alias sd="s down"
-alias sam="s artisan migrate"
-alias sud="s up -d"
-alias samr="s artisan migrate:rollback"
-alias sat="s artisan tinker"
 alias awssso="sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.sh -f  /Users/shaun/Projects/evaluagent/evaluagent/.env"
 alias a="artisan"
 alias at="a tinker"
 alias am="a migrate"
+alias amr="a migrate:rollback"
 alias dump="composer dump"
 alias phpx="PHP_IDE_CONFIG='serverName=Evaluagent.test' \
     php \
@@ -68,7 +65,6 @@ countpods() {
 update-all() {
   omz update
   brew update
-  lvim +LvimUpdate +q
 }
 
 fresize() {
