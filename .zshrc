@@ -27,12 +27,10 @@ source ~/.source/alias.sh
 source ~/.source/secretManagerCommands.sh
 source ~/.source/bindings.sh
 
-# source ~/.source/stow.sh
-# source ~/.sourc/brew.sh
+source ~/.source/stow.sh
+source ~/.source/brew.sh
 # source ~/.source/motd.sh
 # source ~/.source/tmux.sh
 
 source ~/.source/completions.sh
 source ~/.source/nvm.sh
-
-uptime
