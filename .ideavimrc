@@ -8,12 +8,21 @@ source ~/ideavim/plugins.vim
 
 " Plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
-" Which key
 set notimeout
-" Idea specific settings
 set ideajoin
-" Strict mode for development
 set ideastrictmode
+
+set scrolloff=10
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+" Search Improvements
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
 
 " Laravel idea
 nnoremap <leader>li :action LaravelIdea<CR>
@@ -50,6 +59,7 @@ noremap <leader>sr :reg<CR>
 nnoremap <leader>sm :marks<CR>
 nnoremap <Leader>ov :vs ~/.ideavimrc
 nnoremap <Leader>oe :vs ~/Projects/Evaluagent/Evaluagent/.env<CR>
+nnoremap <Leader>oc :! cursor %<CR>
 
 " Fix
 nnoremap <Leader>fd :action FixDocComment<CR>
@@ -142,3 +152,6 @@ noremap gp gT
 
 " Coilot 
 nnoremap <leader>cc :action copilot.requestCompletions<CR>
+
+" Which key:
+"source ~/ideavim/whichkey.vim
