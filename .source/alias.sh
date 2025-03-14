@@ -42,64 +42,72 @@ alias vz="v ~/.zshrc"
 
 #Functions
 mkcd() {
-  mkdir -p "$1" && cd "$1"
+    mkdir -p "$1" && cd "$1"
 }
 
 gpush() {
-  git stash && git checkout $1 && git fetch && git pull && git merge - && git push && git checkout - && git stash pop
+    git stash && git checkout $1 && git fetch && git pull && git merge - && git push && git checkout - && git stash pop
 }
 
 topcommands() {
-  history | awk '{print $2}' | sort | uniq -c | sort -rn | head -$1
+    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -$1
 }
 
 change() {
-  git stash && git checkout $1 && git stash pop
+    git stash && git checkout $1 && git stash pop
 
 }
 countpods() {
-  kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
+    kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
 }
 
 update-all() {
-  omz update
-  brew update
+    omz update
+    brew update
 }
 
 fresize() {
-  #arguments: 1 = output, 2 = output, 3 = width
-  ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2"
+    #arguments: 1 = output, 2 = output, 3 = width
+    ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2"
 }
 
 jqp() {
-  jq <<<"$1"
+    jq <<<"$1"
 }
 
 vs() {
-  "$@" | v -
+    "$@" | v -
 }
 
 cheat() {
-  curl cheat.sh/"$@" | less
+    curl cheat.sh/"$@" | less
 }
 
 scheckout() {
-  git stash
-  git checkout $1
-  git pull
-  git stash pop
+    git stash
+    git checkout $1
+    git pull
+    git stash pop
 }
 merge-develop() {
-  git checkout develop
-  git pull
-  git checkout -
-  git merge develop
+    git checkout develop
+    git pull
+    git checkout -
+    git merge develop
 }
 
 analyse() {
-  # $1 = integrationId
-  # $2 = fcUuid
-  php artisan analytics:dispatch-single-fetched-contact-for-analytics $1 $2
+    # $1 = integrationId
+    # $2 = fcUuid
+    php artisan analytics:dispatch-single-fetched-contact-for-analytics $1 $2
+}
+
+mtgRandom() {
+    curl -s https://api.scryfall.com/cards/random | jq -r '.image_uris.normal'
+}
+
+mtgGenerate() {
+    wget $(mtgRandom) -O ~/Pictures/mtg/$(uuid).jpg
 }
 
 #Kubernetes
@@ -112,11 +120,11 @@ alias t="tmux"
 alias tl="tmux ls"
 alias td="tmux detach"
 tnew() {
-  tmux new-session -s $1
+    tmux new-session -s $1
 }
 tatt() {
-  tmux attach -t $1
+    tmux attach -t $1
 }
 tkill() {
-  tmux kill-session -t $1
+    tmux kill-session -t $1
 }

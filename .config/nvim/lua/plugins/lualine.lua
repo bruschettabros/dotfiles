@@ -25,24 +25,33 @@ return {
 
     -- Mode icon and name mapping
     local mode_map = {
-      ['NORMAL'] = { icon = '󰆧', color = colors.blue },
-      ['INSERT'] = { icon = '󰏫', color = colors.green },
-      ['VISUAL'] = { icon = '󰈈', color = colors.purple },
-      ['V-LINE'] = { icon = '󰈈', color = colors.purple },
-      ['V-BLOCK'] = { icon = '󰈈', color = colors.purple },
-      ['REPLACE'] = { icon = '󰛔', color = colors.red },
-      ['COMMAND'] = { icon = '󰘳', color = colors.yellow },
+      ["NORMAL"] = { icon = "󰆧", color = colors.blue },
+      ["INSERT"] = { icon = "󰏫", color = colors.green },
+      ["VISUAL"] = { icon = "󰈈", color = colors.purple },
+      ["V-LINE"] = { icon = "󰈈", color = colors.purple },
+      ["V-BLOCK"] = { icon = "󰈈", color = colors.purple },
+      ["REPLACE"] = { icon = "󰛔", color = colors.red },
+      ["COMMAND"] = { icon = "󰘳", color = colors.yellow },
     }
 
-    -- Animated dots for LSP
+    -- Animated separator component
+    local function animated_separator()
+      local frames = { "▒░▓▒░", "░▒░▓▒", "▓▒░▒░", "▒▓▒░▒" }
+      local ms = vim.loop.hrtime() / 1000000
+      local frame = frames[math.floor(ms / 120) % #frames + 1]
+      return frame
+    end
+
     local function get_lsp_clients()
-      local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-      if #clients == 0 then return "󰒎 No LSP" end
-      
+      local clients = vim.lsp.get_active_clients({ bufnr = 0 }) or {}
+      if #clients == 0 then
+        return "󰒎 No LSP"
+      end
+
       local anim_frames = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
       local ms = vim.loop.hrtime() / 1000000
       local frame = anim_frames[math.floor(ms / 120) % #anim_frames + 1]
-      
+
       local client_names = {}
       for _, client in pairs(clients) do
         table.insert(client_names, client.name)
@@ -53,10 +62,14 @@ return {
     -- Enhanced file size with dynamic icons
     local function get_file_size()
       local file = vim.fn.expand("%:p")
-      if string.len(file) == 0 then return "" end
+      if string.len(file) == 0 then
+        return ""
+      end
       local size = vim.fn.getfsize(file)
-      if size <= 0 then return "" end
-      
+      if size <= 0 then
+        return ""
+      end
+
       local suffixes = { "B", "KB", "MB", "GB" }
       local icons = { "󰈔", "󰈔", "󰈔", "󰈔" }
       local i = 1
@@ -71,8 +84,8 @@ return {
     local function get_time()
       local time = os.date("*t")
       local icons = {
-        [0] = "󱑊",  -- 12am - 6am
-        [6] = "󰖨",  -- 6am - 12pm
+        [0] = "󱑊", -- 12am - 6am
+        [6] = "󰖨", -- 6am - 12pm
         [12] = "󰖚", -- 12pm - 6pm
         [18] = "󰖛", -- 6pm - 12am
       }
@@ -85,7 +98,7 @@ return {
       normal = {
         a = { fg = colors.dark, bg = colors.blue, gui = "bold" },
         b = { fg = colors.blue_light, bg = colors.bg },
-        c = { fg = colors.fg, bg = colors.bg }
+        c = { fg = colors.fg, bg = colors.bg },
       },
       insert = {
         a = { fg = colors.dark, bg = colors.green, gui = "bold" },
@@ -106,15 +119,15 @@ return {
       inactive = {
         a = { fg = colors.dark, bg = colors.cyan, gui = "bold" },
         b = { fg = colors.cyan, bg = colors.bg },
-      }
+      },
     }
 
     return {
       options = {
         icons_enabled = true,
         theme = custom_theme,
-        component_separators = { left = '│', right = '│'},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = "|", right = "|" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = {},
           winbar = {},
@@ -126,28 +139,29 @@ return {
       sections = {
         lualine_a = {
           {
-            'mode',
+            "mode",
             fmt = function(str)
-              local map = mode_map[str] or { icon = '󰆧', color = colors.blue }
-              return map.icon .. ' ' .. str
+              local map = mode_map[str] or { icon = "󰆧", color = colors.blue }
+              return map.icon .. " " .. str
             end,
-            separator = { left = '', right = '' },
+            separator = { left = "", right = "" },
             padding = { left = 1, right = 1 },
-          }
+          },
+          animated_separator,
         },
         lualine_b = {
           {
-            'branch',
-            icon = '',
-            color = { fg = colors.magenta, gui = 'bold' },
+            "branch",
+            icon = "󰊢",
+            color = { fg = colors.magenta, gui = "bold" },
             padding = { left = 1, right = 1 },
           },
           {
-            'diff',
+            "diff",
             symbols = {
-              added = ' ',
-              modified = ' ',
-              removed = ' '
+              added = "+",
+              modified = "~",
+              removed = "-",
             },
             colored = true,
             diff_color = {
@@ -158,12 +172,12 @@ return {
             padding = { left = 1, right = 1 },
           },
           {
-            'diagnostics',
+            "diagnostics",
             symbols = {
-              error = ' ',
-              warn = ' ',
-              info = ' ',
-              hint = ' ',
+              error = "x ",
+              warn = "! ",
+              info = " ",
+              hint = "? ",
             },
             diagnostics_color = {
               error = { fg = colors.red },
@@ -173,111 +187,109 @@ return {
             },
             colored = true,
             padding = { left = 1, right = 1 },
-          }
+          },
         },
         lualine_c = {
           {
-            'filename',
+            "filename",
             path = 1,
             symbols = {
-              modified = '●',
-              readonly = '',
-              unnamed = '[No Name]',
+              modified = "●",
+              readonly = "",
+              unnamed = "[No Name]",
             },
-            color = { fg = colors.cyan, gui = 'bold' },
+            color = { fg = colors.cyan, gui = "bold" },
             padding = { left = 1, right = 1 },
           },
           {
             get_lsp_clients,
             padding = { left = 1, right = 1 },
-            color = { fg = colors.green, gui = 'bold' },
-          }
+            color = { fg = colors.green, gui = "bold" },
+          },
         },
         lualine_x = {
           {
             get_file_size,
             padding = { left = 1, right = 1 },
-            color = { fg = colors.yellow, gui = 'bold' },
+            color = { fg = colors.yellow, gui = "bold" },
           },
           {
-            'encoding',
+            "encoding",
             fmt = string.upper,
-            icon = '󰈡',
+            icon = "󰈡",
             color = { fg = colors.magenta },
             padding = { left = 1, right = 1 },
           },
           {
-            'fileformat',
+            "fileformat",
             symbols = {
-              unix = '󰌽 UNIX',
-              dos = '󰨡 WIN',
-              mac = ' MAC',
+              unix = "󰌽 Unix",
+              dos = "󰨡 Win",
+              mac = " Mac",
             },
             color = { fg = colors.orange },
             padding = { left = 1, right = 1 },
           },
           {
-            'filetype',
-            icon_only = true,
+            "filetype",
             colored = true,
             padding = { left = 1, right = 1 },
-          }
+          },
         },
         lualine_y = {
           {
-            'progress',
-            icon = '󰜎',
-            color = { fg = colors.purple, gui = 'bold' },
+            "progress",
+            icon = "󰜎",
+            color = { fg = colors.purple, gui = "bold" },
             padding = { left = 1, right = 1 },
-          }
+          },
         },
         lualine_z = {
           {
             get_time,
-            separator = { left = '', right = '' },
+            separator = { left = "", right = "" },
             color = function()
               local mode = vim.fn.mode()
-              if mode == 'n' then
-                return { fg = colors.dark, bg = colors.blue, gui = 'bold' }
-              elseif mode == 'i' then
-                return { fg = colors.dark, bg = colors.green, gui = 'bold' }
-              elseif mode:find('[vV]') then
-                return { fg = colors.dark, bg = colors.purple, gui = 'bold' }
-              elseif mode == 'R' then
-                return { fg = colors.dark, bg = colors.red, gui = 'bold' }
-              elseif mode == 'c' then
-                return { fg = colors.dark, bg = colors.yellow, gui = 'bold' }
+              if mode == "n" then
+                return { fg = colors.dark, bg = colors.blue, gui = "bold" }
+              elseif mode == "i" then
+                return { fg = colors.dark, bg = colors.green, gui = "bold" }
+              elseif mode:find("[vV]") then
+                return { fg = colors.dark, bg = colors.purple, gui = "bold" }
+              elseif mode == "R" then
+                return { fg = colors.dark, bg = colors.red, gui = "bold" }
+              elseif mode == "c" then
+                return { fg = colors.dark, bg = colors.yellow, gui = "bold" }
               else
-                return { fg = colors.dark, bg = colors.blue, gui = 'bold' }
+                return { fg = colors.dark, bg = colors.blue, gui = "bold" }
               end
             end,
             padding = { left = 1, right = 1 },
-          }
-        }
+          },
+        },
       },
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
         lualine_c = {
           {
-            'filename',
+            "filename",
             color = { fg = colors.cyan },
-          }
+          },
         },
         lualine_x = {
           {
-            'location',
+            "location",
             color = { fg = colors.blue },
-          }
+          },
         },
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
       tabline = {},
       winbar = {},
       inactive_winbar = {},
-      extensions = {'fugitive', 'nvim-tree', 'lazy', 'mason'}
+      extensions = { "fugitive", "nvim-tree", "lazy", "mason" },
     }
-  end
+  end,
 }
-
