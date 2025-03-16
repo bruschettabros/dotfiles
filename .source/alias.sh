@@ -38,7 +38,7 @@ alias phpp="PHP_IDE_CONFIG='serverName=evaluagent.test' \
     -dxdebug.output_dir=/Users/shaun/Projects/Profiler"
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
-alias vz="v ~/.zshrc"
+alias vz="v ~/dotfiles/.zshrc"
 
 #Functions
 mkcd() {
