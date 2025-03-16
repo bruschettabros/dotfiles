@@ -59,7 +59,7 @@ return {
     end
 
     local function get_lsp_clients()
-      local clients = vim.lsp.get_active_clients({ bufnr = 0 }) or {}
+      local clients = vim.lsp.get_clients({ bufnr = 0 }) or {}
       if #clients == 0 then
         return "󰒎 No LSP"
       end
