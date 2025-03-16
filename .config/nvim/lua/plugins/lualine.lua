@@ -36,9 +36,25 @@ return {
 
     -- Animated separator component
     local function animated_separator()
-      local frames = { "▒░▓▒░", "░▒░▓▒", "▓▒░▒░", "▒▓▒░▒" }
+      local frames = {
+        "▒░▓▒░",
+        "░▒░▓▒",
+        "▓▒░▒░",
+        "▒▓▒░▒",
+        "▒░▓▒v",
+        "░▒░vi",
+        "▓▒vim",
+        "▒vim▒",
+        "▒░▓▒░",
+        "░▒󰌽▓▒",
+        "▓▒░▒░",
+        "▒▓󰊢░▒",
+      }
+
       local ms = vim.loop.hrtime() / 1000000
-      local frame = frames[math.floor(ms / 120) % #frames + 1]
+      local tick = math.random(1, 20) * 10
+
+      local frame = frames[math.floor(ms / tick) % #frames + 1]
       return frame
     end
 
