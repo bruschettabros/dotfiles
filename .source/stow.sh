@@ -1,7 +1,7 @@
-if [[ $STOW = true ]]
-then
+if [[ $STOW = true ]]; then
     echo "Stow step..."
     cd ~/dotfiles
+    git stash >/dev/null 2>&1
     git pull
     # This generates a script that can be installed via:
     # brew bundle install --file ~/Brewfile
@@ -10,5 +10,6 @@ then
     brew bundle dump
     mv Brewfile Brewfile.$OSTYPE
     stow .
+    git stash pop >/dev/null 2>&1
     cd -
 fi
