@@ -128,6 +128,3 @@ tatt() {
 tkill() {
     tmux kill-session -t $1
 }
-
-#Windows WSL
-export vlc="/mnt/c/Program Files/VideoLAN/VLC/vlc.exe"
