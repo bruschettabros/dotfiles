@@ -4,11 +4,12 @@
 --
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.mouse = "a" -- Enable mouse support
-vim.opt.tabstop = 4 -- Set tab width to 4 spaces
-vim.opt.shiftwidth = 4 -- Set indentation width to 4 spaces
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.syntax = "on" -- Enable syntax highlighting
-vim.opt.wrap = true -- Enable line wrapping
-vim.opt.clipboard = "unnamedplus" -- Use system clipboard
-vim.opt.smartindent = true -- Enable smart indentation
+vim.opt.mouse = "a"
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.syntax = "on"
+vim.opt.wrap = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.smartindent = true
+vim.opt.autoread = true
