@@ -3,6 +3,7 @@ export ZSH=$HOME"/.oh-my-zsh"
 # ZSH_THEME="amuse"
 # ZSH_THEME="jonathon"
 ZSH_THEME="fino-time"
+POSH_THEME="https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/velvet.omp.json"
 
 plugins=(iterm2 git httpie laravel web-search docker docker-compose jira colored-man-pages vscode artisan tmux golang)
 
@@ -30,8 +31,9 @@ source ~/.source/bindings.sh
 source ~/.source/stow.sh
 source ~/.source/brew.sh
 source ~/.source/motd.sh
-# source ~/.source/tmux.sh
+#source ~/.source/tmux.sh
 
 source ~/.source/completions.sh
 source ~/.source/nvm.sh
-source ~/.source/prompt.sh
+
+eval "$(oh-my-posh init zsh --config $POSH_THEME)"
