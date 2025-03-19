@@ -35,7 +35,7 @@ nnoremap <Leader>tz :action ToggleZenMode<CR>
 nnoremap <leader>ns :action NewScratchFile<CR>
 nnoremap <Leader>ic :action InspectCode<CR>
 nnoremap <CR> a<CR><Esc>k$
-nnoremap U <C-R>
+noremap U <C-R>
 nnoremap dam :action MethodUp<CR>f{vi{:g/^$/d<CR>dap
 nnoremap <leader>cr :action CollapseRegion<CR>
 nnoremap <leader>er :action ExpandRegion<CR>
@@ -56,7 +56,7 @@ nnoremap <Leader>ot :action ActivateTerminalToolWindow<CR>
 nnoremap <Leader>clr :action CloseAllToTheRight<CR>
 nnoremap <Leader>clu :action CloseAllUnmodifiedEditors<CR>
 noremap <leader>sr :reg<CR>
-nnoremap <leader>sm :marks<CR>
+nnoremap <leader>sm :action ShowTypeBookmarks<CR>
 nnoremap <Leader>ov :vs ~/.ideavimrc
 nnoremap <Leader>oe :vs ~/Projects/Evaluagent/Evaluagent/.env<CR>
 nnoremap <Leader>oc :! cursor %<CR>
@@ -68,7 +68,7 @@ nnoremap <Leader>mf :action RenameFile<CR>
 nnoremap <Leader>fc :action ReformatCode<CR>
 vnoremap <Leader>em :action ExtractMethod<CR>
 vnoremap <Leader>ei :action ExtractInterface<CR>
-nnoremap <leader>ph :action PasteMultiple <CR>
+nnoremap <leader>sr :action PasteMultiple <CR>
 nnoremap V V$
 
 " Git
@@ -93,8 +93,8 @@ nnoremap <leader>si :action StepInto <CR>
 nnoremap <leader>ss :action Stop <CR>
 
 " Start and stop
+nnoremap <Leader>rc :action RunClass<CR>
 nnoremap <Leader>d :action Debug<CR>
-nnoremap <Leader>rc :action Stop<CR>
 nnoremap <Leader>rr :action Rerun<CR>
 nnoremap <leader>ra :action RunAnything<CR>
 nnoremap <leader>ec :action editRunConfigurations<CR>
@@ -120,6 +120,8 @@ nnoremap <leader>tr :action EditorResetFontSize<CR>
 
 " popup
 nnoremap <Leader>oo :action FileStructurePopup<CR>
+nnoremap <Leader>op :action EditorPopupMenu<CR>
+
 nnoremap <leader>pg :action Generate<CR>
 nnoremap <Leader>pm :action ShowPopupMenu<CR>
 
