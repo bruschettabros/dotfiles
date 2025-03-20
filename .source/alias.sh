@@ -41,6 +41,47 @@ alias poke="fortune | pokemonsay -n -w 30"
 alias vz="v ~/dotfiles/.zshrc"
 
 #Functions
+function monitor_ea_workers() {
+    # Check if running inside tmux
+    if [ -z "$TMUX" ]; then
+        echo "Not currently in a tmux session. Please run this from within tmux."
+        return 1
+    fi
+
+    # Check if stern is available
+    if ! command -v stern &>/dev/null; then
+        echo "stern is not installed. Please install it first."
+        return 1
+    fi
+
+    local workers=(
+        "analytics"
+        "transcription"
+        "text-mining"
+        "text-embedding"
+        "smartscore"
+    )
+
+    tmux new-window -n "ea-workers"
+
+    local num_workers=${#workers[@]}
+
+    # Split panes for each worker (except the first one)
+    for ((i = 1; i < $num_workers; i++)); do
+        tmux split-window -v
+        # Even distribution
+        tmux select-layout even-vertical
+    done
+
+    # Start stern in each pane
+    for ((i = 1; i <= $num_workers; i++)); do
+        tmux send-keys -t :.$(($i - 1)) "stern deployment/ea-${workers[$i]}-worker -e \"${workers[$i]}\" -e \"production\.DEBUG\" -e \"production\.INFO\" -e \"RUNNING\"" C-m
+    done
+
+    # Select the first pane
+    tmux select-pane -t :.0
+}
+
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }

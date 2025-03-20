@@ -1,3 +1,3 @@
 return {
-  -- "alexghergh/nvim-tmux-navigation",
+  "aserowy/tmux.nvim",
 }
