@@ -87,7 +87,7 @@
                     "foreground": "#E4F34A",
                     "leading_diamond": " ",
                     "properties": {
-                        "fetch_version": false
+                        "fetch_version": true 
                     },
                     "style": "diamond",
                     "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
@@ -99,7 +99,7 @@
                     "foreground": "#7FD5EA",
                     "leading_diamond": " ",
                     "properties": {
-                        "fetch_version": false
+                        "fetch_version": true 
                     },
                     "style": "diamond",
                     "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
@@ -111,7 +111,7 @@
                     "foreground": "#42E66C",
                     "leading_diamond": " ",
                     "properties": {
-                        "fetch_version": false
+                        "fetch_version": true 
                     },
                     "style": "diamond",
                     "template": "{{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
@@ -123,7 +123,7 @@
                     "foreground": "#E64747",
                     "leading_diamond": " ",
                     "properties": {
-                        "fetch_version": false
+                        "fetch_version": true 
                     },
                     "style": "diamond",
                     "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
@@ -135,12 +135,24 @@
                     "foreground": "#E64747",
                     "leading_diamond": " ",
                     "properties": {
-                        "fetch_version": false
+                        "fetch_version": true 
                     },
                     "style": "diamond",
                     "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
                     "trailing_diamond": "",
                     "type": "java"
+                },
+                {
+                    "background": "#4c1f5e",
+                    "foreground": "#777BB3",
+                    "leading_diamond": "  ",
+                    "properties": {
+                        "fetch_version": true 
+                    },
+                    "style": "diamond",
+                    "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+                    "trailing_diamond": "",
+                    "type": "php"
                 }
             ],
             "type": "rprompt"
