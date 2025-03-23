@@ -151,6 +151,14 @@ mtgGenerate() {
     wget $(mtgRandom) -O ~/Pictures/mtg/$(uuid).jpg
 }
 
+streamVideo() {
+    yt-dlp --embed-subs -o - "$1" | $vlc -
+}
+
+downloadVideo() {
+    yt-dlp -o "$2" "$1"
+}
+
 #Kubernetes
 alias k=kubectl
 alias kgp="k get pods"
