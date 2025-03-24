@@ -126,7 +126,12 @@ merge-develop() {
 analyse() {
     # $1 = integrationId
     # $2 = fcUuid
-    php artisan analytics:dispatch-single-fetched-contact-for-analytics $1 $2
+    a analytics:dispatch-single-fetched-contact-for-analytics $1 $2
+}
+
+startQueues() {
+    timeout=7200
+    a queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
 }
 
 countpods() {

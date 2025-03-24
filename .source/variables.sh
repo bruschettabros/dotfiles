@@ -7,6 +7,7 @@ export MOTD=false
 export WORK='evaluagent'
 export LNAME='collins'
 export FNAME='shaun'
+export WORK_QUEUES=(analytics_fifo deepgram_fifo analytics_priority analytics default EA3_DEEPGRAM_LOCAL.fifo EA3_ANALYTICS_TEST.fifo EA3_WORKQUEUES_ASSIGN_LOCAL smartscore_default.fifo)
 
 # Git
 export EMAIL="$FNAME.$LNAME@$WORK.com"
@@ -33,10 +34,10 @@ Darwin*)
     export vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     ;;
 *-WSL2*)
-    # WSL
+    export EMAIL=$FNAME@shaunc.co.uk
     export vlc="/mnt/c/Program Files/VideoLAN/VLC/vlc.exe"
     ;;
 *)
-    echo 'Unknown OS...'
+    echo "Unknown OS: $(uname -sr)"
     ;;
 esac
