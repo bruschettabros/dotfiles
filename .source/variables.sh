@@ -2,10 +2,12 @@
 export BREW=true
 export STOW=true
 export MOTD=false
-export DEFAULT_TMUX=false
+
+# Work
+export WORK='evaluagent'
 
 # Git
-export EMAIL='shaun.collins@evaluagent.com'
+export EMAIL="shaun.collins@$WORK.com"
 export GIT_COMMITTER_EMAIL=$EMAIL
 export GIT_AUTHOR_EMAIL=$EMAIL
 
@@ -14,8 +16,16 @@ export EDITOR='nvim'
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
-case "$(uname -sr)" in
+# Misc
+export PROJECTS=~/Projects
+export WORK_DIR=$PROJECTS/$WORK
+
+#Php
+export XDEBUG_SERVER=Evaluagent.test
+export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
+
 # OS Specific
+case "$(uname -sr)" in
 Darwin*)
     export vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     ;;
