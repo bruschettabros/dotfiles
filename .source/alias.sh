@@ -124,6 +124,10 @@ cheat() {
     curl cheat.sh/"$@" | less
 }
 
+setVim() {
+    alias vim="$@"
+}
+
 scheckout() {
     git stash
     git checkout $1
