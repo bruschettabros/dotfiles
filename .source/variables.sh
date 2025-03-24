@@ -32,7 +32,7 @@ case "$(uname -sr)" in
 Darwin*)
     export vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     ;;
-Linux*Microsoft*)
+*-WSL2*)
     # WSL
     export vlc="/mnt/c/Program Files/VideoLAN/VLC/vlc.exe"
     ;;
