@@ -7,7 +7,8 @@ alias so="exec zsh"
 alias c="clear"
 alias v="vim"
 alias pls="fuck"
-alias p="cd $PROJECTS; ll"
+alias l="eza --no-filesize --long --color=always --icons=always -a"
+alias p="cd $PROJECTS; l"
 alias ll='ls -larh'
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
@@ -72,8 +73,9 @@ topcommands() {
 }
 
 update-all() {
-    omz update
+    mas upgrade
     brew update
+    omz update
 }
 
 fresize() {
