@@ -1,25 +1,35 @@
+![image](https://github.com/user-attachments/assets/ede82fa8-a8d8-4a74-9d0d-5f18a94a519f)
+
 # My dotfiles
 
-A collection of dotfiles and config files that can be used when setting up a new machine My dot files
+A collection of dotfiles and config files that can be used for the perfect CLI experience on a new machine
 
 ## Installing
 
-This repo relies on `stow`
+Pull down the repo 
 ```sh
-brew install stow
+cd ~ && git clone https://github.com/bruschettabros/dotfiles.git
 ```
 
 Once you have pulled down this repo: 
- - `cd` into repo
+ - `cd` into the repo
+```
+cd dotfiles
+```
  - Remove/backup existing dotfile
 ```
-cd ~ && mkdir dotbackup &&  mv .* dotbackup/
+cd ~ && mkdir dotbackup &&  mv .* dotbackup/; cd -
 ```
- - run `stow .`
- - run `exec zsh` and `.zshrc` will take care of the rest
+ - run the install script
+```
+./install.sh
+```
+Note: This will install [oh-my-zsh](https://ohmyz.sh/) and [brew](https://brew.sh/). 
+
+If you already have these installed, comment out the relevant lines.
 
 ## Requirements
 
  - Zsh
- - Brew
  - Git
+ - Curl
