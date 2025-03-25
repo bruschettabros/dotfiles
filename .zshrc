@@ -27,7 +27,21 @@ source ~/.source/tmux.sh
 source ~/.source/nvm.sh
 source ~/.source/completions.sh
 
-plugins=(iterm2 git httpie laravel web-search docker docker-compose jira colored-man-pages vscode artisan tmux golang)
+plugins=(
+    iterm2
+    git
+    httpie
+    laravel
+    web-search
+    docker
+    docker-compose
+    jira
+    colored-man-pages
+    vscode
+    artisan
+    tmux
+    golang
+)
 
 setVim $EDITOR
 
