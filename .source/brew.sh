@@ -1,10 +1,8 @@
-if [[ $BREW = true ]]
-then
+if [[ $BREW = true ]]; then
     #Linux related Brew
-    echo "Brew step..."
     test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+    echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.bashrc
 fi
 
 #todo: Fix

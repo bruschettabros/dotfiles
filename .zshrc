@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-#
-#
 
 export ZSH=$HOME"/.oh-my-zsh"
 
@@ -19,8 +17,8 @@ source ~/.source/bindings.sh
 source ~/.source/fzf.sh
 
 # Order matters! 
-source ~/.source/stow.sh
 source ~/.source/brew.sh
+source ~/.source/stow.sh
 source ~/.source/motd.sh
 source ~/.source/tmux.sh
 

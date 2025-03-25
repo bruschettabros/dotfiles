@@ -78,6 +78,15 @@ update-all() {
     omz update
 }
 
+generate_brewfile() {
+    # This generates a script that can be installed via:
+    # brew bundle install --file ~/Brewfile
+    rm -f ~/dotfiles/Brewfile
+    rm -f ~/dotfiles/Brewfile.$OSTYPE
+    brew bundle dump
+    mv Brewfile Brewfile.$OSTYPE
+}
+
 fresize() {
     #arguments: 1 = output, 2 = output, 3 = width
     ffmpeg -i "$1" -vf scale=$3:-1 -q:v 1 "$2"
