@@ -41,6 +41,7 @@ plugins=(
     artisan
     tmux
     golang
+    ssh
 )
 
 setVim $EDITOR

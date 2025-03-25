@@ -110,6 +110,14 @@ return {
       return string.format("%s %02d:%02d:%02d", icon, time.hour, time.min, time.sec)
     end
 
+    local function recording_macro()
+      local reg = vim.fn.reg_recording()
+      if reg ~= "" then
+        return "󰑋 @" .. reg
+      end
+      return ""
+    end
+
     local custom_theme = {
       normal = {
         a = { fg = colors.dark, bg = colors.blue, gui = "bold" },
@@ -224,6 +232,7 @@ return {
           },
         },
         lualine_x = {
+          recording_macro,
           {
             get_file_size,
             padding = { left = 1, right = 1 },
