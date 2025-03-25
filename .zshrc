@@ -16,6 +16,7 @@ source ~/.source/variables.sh
 source ~/.source/alias.sh
 source ~/.source/secretManagerCommands.sh
 source ~/.source/bindings.sh
+source ~/.source/fzf.sh
 
 # Order matters! 
 source ~/.source/stow.sh
