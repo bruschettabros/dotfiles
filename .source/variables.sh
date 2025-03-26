@@ -7,7 +7,19 @@ export MOTD=true
 export WORK='evaluagent'
 export LNAME='collins'
 export FNAME='shaun'
-export WORK_QUEUES=(analytics_fifo deepgram_fifo analytics_priority analytics default EA3_DEEPGRAM_LOCAL.fifo EA3_ANALYTICS_TEST.fifo EA3_WORKQUEUES_ASSIGN_LOCAL smartscore_default.fifo)
+export WORK_QUEUES=(
+    analytics_fifo
+    deepgram_fifo
+    analytics_priority
+    analytics
+    default
+    EA3_DEEPGRAM_LOCAL.fifo
+    EA3_ANALYTICS_TEST.fifo
+    EA3_WORKQUEUES_ASSIGN_LOCAL
+    smartscore_default.fifo
+    EA3_TEXT_EMBEDDING_UAT.fifo
+    EA3_TEXT_MINING_UAT.fifo
+)
 
 # Git
 export EMAIL="$FNAME.$LNAME@$WORK.com"
