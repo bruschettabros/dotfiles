@@ -132,8 +132,8 @@
                 },
                 {
                     "background": "#4c1f5e",
-                    "leading_diamond": "",
                     "foreground": "#E64747",
+                    "leading_diamond": "",
                     "properties": {
                         "fetch_version": true
                     },
@@ -143,8 +143,8 @@
                     "type": "java"
                 },
                 {
-                    "background": "#4F5B93",
-                    "foreground": "#FFFFFF",
+                    "foreground": "#4F5B93",
+                    "background": "#4c1f5e",
                     "properties": {
                         "fetch_version": true
                     },
@@ -155,8 +155,8 @@
                     "type": "php"
                 },
                 {
-                    "background": "#000E80",
-                    "foreground": "#FFFFFF",
+                    "background": "#4c1f5e",
+                    "foreground": "#000E80",
                     "properties": {
                         "fetch_version": true
                     },
@@ -167,8 +167,8 @@
                     "type": "lua"
                 },
                 {
-                    "background": "#F25133",
-                    "foreground": "#FFFFFF",
+                    "background": "#4c1f5e",
+                    "foreground": "#F25133",
                     "properties": {
                         "fetch_version": true
                     },
