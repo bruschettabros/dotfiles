@@ -3,7 +3,7 @@
 #Utility
 alias copy="pbcopy"
 alias paste="pbpaste"
-alias so="exec zsh"
+alias so="source ~/.zshrc"
 alias c="clear"
 alias v="vim"
 alias pls="fuck"
@@ -102,7 +102,7 @@ cheat() {
 
 #vim
 vs() {
-    "$@" | v -
+    "$@" | $EDITOR -
 }
 
 setVim() {

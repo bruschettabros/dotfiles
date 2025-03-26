@@ -153,6 +153,30 @@
                     "leading_diamond": "",
                     "trailing_diamond": "",
                     "type": "php"
+                },
+                {
+                    "background": "#000E80",
+                    "foreground": "#FFFFFF",
+                    "properties": {
+                        "fetch_version": true
+                    },
+                    "style": "diamond",
+                    "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "type": "lua"
+                },
+                {
+                    "background": "#F25133",
+                    "foreground": "#FFFFFF",
+                    "properties": {
+                        "fetch_version": true
+                    },
+                    "style": "diamond",
+                    "template": "  {{ .Version }}",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "type": "git"
                 }
             ],
             "type": "rprompt"
