@@ -7,12 +7,13 @@ alias so="source ~/.zshrc"
 alias c="clear"
 alias v="vim"
 alias pls="fuck"
-alias l="eza --no-filesize --long --color=always --icons=always -a"
+alias l="eza  --long --color=always --icons=always -a"
 alias p="cd $PROJECTS; l"
 alias ll='ls -larh'
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
 alias vz="v ~/dotfiles/.zshrc"
+alias flushdns="sudo systemd-resolve - -flush-caches"
 
 #php
 alias artisan="$WORK_DIR/evaluagent/artisan"
@@ -37,10 +38,10 @@ alias phpp="PHP_IDE_CONFIG='serverName=$XDEBUG_SERVER' \
     -dxdebug.output_dir=$XDEBUG_PROFILER_DIR"
 
 #git
+alias g="git"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gls="gl --stat"
 alias glo="gl --oneline"
-alias flushdns="sudo systemd-resolve - -flush-caches"
 alias gs="git status"
 
 #sail
