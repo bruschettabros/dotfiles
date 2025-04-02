@@ -10,9 +10,15 @@ if [[ $MOTD = true ]]; then
         "kali"
         "netrunner"
         "netbsd"
+        "alpine"
+        "pop"
+        "centos"
+        "elementary"
+        "garuda"
+        "mac"
     )
     distro=${distros[$RANDOM % ${#distros[@]}]}
 
     figlet -f slant "$WORK" | lolcat -t
-    neofetch --ascii_distro $distro | lolcat -t
+    neofetch --ascii_distro | lolcat -t
 fi
