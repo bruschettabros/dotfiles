@@ -64,15 +64,11 @@ return {
         return "󰒎 No LSP"
       end
 
-      local anim_frames = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
-      local ms = vim.loop.hrtime() / 1000000
-      local frame = anim_frames[math.floor(ms / 120) % #anim_frames + 1]
-
       local client_names = {}
       for _, client in pairs(clients) do
         table.insert(client_names, client.name)
       end
-      return string.format("%s 󰒍 %s", frame, table.concat(client_names, ", "))
+      return string.format("󰒍 LSP: %s", table.concat(client_names, ", "))
     end
 
     -- Enhanced file size with dynamic icons
@@ -171,7 +167,7 @@ return {
             separator = { left = "", right = "" },
             padding = { left = 1, right = 1 },
           },
-          -- animated_separator,
+          animated_separator,
         },
         lualine_b = {
           {
