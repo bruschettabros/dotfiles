@@ -1,7 +1,7 @@
 # On exec
 export BREW=true
 export STOW=false
-export MOTD=true
+export MOTD=false
 
 # Work
 export WORK='evaluagent'

@@ -167,7 +167,6 @@ return {
             separator = { left = "", right = "" },
             padding = { left = 1, right = 1 },
           },
-          animated_separator,
         },
         lualine_b = {
           {
