@@ -168,7 +168,7 @@ downloadVideo() {
     yt-dlp -o "$2" "$1"
 }
 
-#tmux:
+#tmux
 tnew() {
     tmux new-session -s "$1"
 }
