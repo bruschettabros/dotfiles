@@ -11,5 +11,6 @@
     c = !git checkout
     p = !git pull
     s = !git switch
+    m = !git merge
 [core]
 
