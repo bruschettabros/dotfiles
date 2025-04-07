@@ -42,7 +42,7 @@ alias g="git"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gls="gl --stat"
 alias glo="gl --oneline"
-alias gs="git status"
+alias gs="git checkout"
 
 #sail
 alias sail="./vendor/bin/sail"
