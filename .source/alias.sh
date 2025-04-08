@@ -142,6 +142,7 @@ analyse() {
 }
 
 startQueues() {
+    IFS=','
     timeout=7200
     a queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
 }
