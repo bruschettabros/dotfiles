@@ -3,6 +3,9 @@ export BREW=true
 export STOW=false
 export MOTD=false
 
+IFS=' '
+export INIT_IFS=$IFS
+
 # Work
 export WORK='evaluagent'
 export LNAME='collins'

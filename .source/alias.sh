@@ -65,6 +65,10 @@ alias td="tmux detach"
 #Functions
 
 #Utility
+resetIfs() {
+    IFS=$INIT_IFS
+}
+
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
@@ -100,6 +104,7 @@ jqp() {
 cheat() {
     IFS='/'
     curl cheat.sh/"$*" | less
+    resetIfs
 }
 
 #vim
@@ -108,7 +113,7 @@ vs() {
 }
 
 setVim() {
-    alias vim="$@"
+    alias vim="$*"
 }
 
 #git
@@ -144,8 +149,9 @@ analyse() {
 
 startQueues() {
     IFS=','
-    timeout=7200
+    timeout="${1:-7200}"
     a queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
+    resetIfs
 }
 
 countpods() {
