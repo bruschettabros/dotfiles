@@ -13,7 +13,6 @@ source ~/.source/path.sh
 source ~/.source/variables.sh
 source ~/.source/alias.sh
 source ~/.source/secretManagerCommands.sh
-source ~/.source/bindings.sh
 source ~/.source/fzf.sh
 
 # Order matters! 
@@ -24,6 +23,8 @@ source ~/.source/tmux.sh
 
 source ~/.source/nvm.sh
 source ~/.source/completions.sh
+
+source ~/.source/bindings.sh
 
 plugins=(
     iterm2
