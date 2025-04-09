@@ -107,6 +107,10 @@ cheat() {
     resetIfs
 }
 
+learn() {
+    cheat "$1" ":learn"
+}
+
 #vim
 vs() {
     "$@" | $EDITOR -
@@ -150,7 +154,7 @@ analyse() {
 startQueues() {
     IFS=','
     timeout="${1:-7200}"
-    a queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
+    phpx artisan queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
     resetIfs
 }
 
