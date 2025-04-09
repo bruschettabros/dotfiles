@@ -98,7 +98,8 @@ jqp() {
 }
 
 cheat() {
-    curl cheat.sh/"$@" | less
+    IFS='/'
+    curl cheat.sh/"$*" | less
 }
 
 #vim
