@@ -173,7 +173,7 @@ mtgGenerate() {
 
 #Video
 streamVideo() {
-    yt-dlp --embed-subs -o - "$1" | $vlc -
+    yt-dlp -o - "$1" | $vlc -
 }
 
 downloadVideo() {
