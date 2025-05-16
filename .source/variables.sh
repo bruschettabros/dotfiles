@@ -7,7 +7,8 @@ IFS=' '
 export INIT_IFS=$IFS
 
 # Work
-export WORK='evaluagent'
+export WORK='shaunc'
+export DOMAIN='co.uk'
 export LNAME='collins'
 export FNAME='shaun'
 export WORK_QUEUES=(
@@ -25,7 +26,7 @@ export WORK_QUEUES=(
 )
 
 # Git
-export EMAIL="$FNAME.$LNAME@$WORK.com"
+export EMAIL="$FNAME.$LNAME@$WORK.$DOMAIN"
 export GIT_COMMITTER_EMAIL=$EMAIL
 export GIT_AUTHOR_EMAIL=$EMAIL
 export GIT_COMMITTER_NAME="$FNAME $LNAME"
