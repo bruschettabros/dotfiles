@@ -7,8 +7,8 @@ IFS=' '
 export INIT_IFS=$IFS
 
 # Work
-export WORK='shaunc'
-export DOMAIN='co.uk'
+export WORK='ceedbox'
+export DOMAIN='com'
 export LNAME='collins'
 export FNAME='shaun'
 export WORK_QUEUES=(
@@ -41,7 +41,7 @@ export PROJECTS=~/Projects
 export WORK_DIR=$PROJECTS/$WORK
 
 #Php
-export XDEBUG_SERVER=Evaluagent.test
+export XDEBUG_SERVER=Ceedbox.test
 export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
 
 # OS Specific

@@ -16,7 +16,7 @@ alias vz="v ~/dotfiles/.zshrc"
 alias flushdns="sudo systemd-resolve - -flush-caches"
 
 #php
-alias artisan="$WORK_DIR/evaluagent/artisan"
+alias artisan="$WORK_DIR/artisan"
 alias phps="phpstorm"
 alias a="artisan"
 alias at="a tinker"
