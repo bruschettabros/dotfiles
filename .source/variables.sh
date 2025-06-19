@@ -7,23 +7,10 @@ IFS=' '
 export INIT_IFS=$IFS
 
 # Work
-export WORK='ceedbox'
+export WORK='Ceedbox'
 export DOMAIN='com'
 export LNAME='collins'
 export FNAME='shaun'
-export WORK_QUEUES=(
-    analytics_fifo
-    deepgram_fifo
-    analytics_priority
-    analytics
-    default
-    EA3_DEEPGRAM_LOCAL.fifo
-    EA3_ANALYTICS_TEST.fifo
-    EA3_WORKQUEUES_ASSIGN_LOCAL
-    smartscore_default.fifo
-    EA3_TEXT_EMBEDDING_UAT.fifo
-    EA3_TEXT_MINING_UAT.fifo
-)
 
 # Git
 export EMAIL="$FNAME.$LNAME@$WORK.$DOMAIN"
@@ -40,6 +27,11 @@ export GIT_EDITOR=$EDITOR
 export PROJECTS=~/Projects
 export WORK_DIR=$PROJECTS/$WORK
 
+export WORK_PROJECTS=(
+    $WORK_DIR/hush
+    $WORK_DIR/tobe
+    $WORK_DIR/container-chase
+)
 #Php
 export XDEBUG_SERVER=Ceedbox.test
 export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
@@ -50,7 +42,6 @@ Darwin*)
     export vlc="/Applications/VLC.app/Contents/MacOS/VLC"
     ;;
 *-WSL2*)
-    export EMAIL=$FNAME@shaunc.co.uk
     export vlc="/mnt/c/Program Files/VideoLAN/VLC/vlc.exe"
     ;;
 *)

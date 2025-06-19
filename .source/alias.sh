@@ -62,7 +62,8 @@ alias t="tmux"
 alias tl="tmux ls"
 alias td="tmux detach"
 
-#Functions
+#WSL
+alias wslhost="/mnt/c/Windows/System32/drivers/etc/hosts"
 
 #Utility
 resetIfs() {
@@ -145,10 +146,32 @@ merge-develop() {
 }
 
 #work
-analyse() {
-    # $1 = integrationId
-    # $2 = fcUuid
-    a analytics:dispatch-single-fetched-contact-for-analytics $1 $2
+
+usephp() {
+    brew unlink php && brew link --force php@"$1"
+}
+
+startProjects() {
+    cd /home/shaun/Projects/Ceedbox/proxy-manager
+    docker-compose up -d
+    cd -
+
+    for project in $WORK_PROJECTS; do
+        cd $project && sail up -d
+        cd -
+    done
+
+}
+
+endProjects() {
+    cd /home/shaun/Projects/Ceedbox/proxy-manager
+    docker-compose down
+    cd -
+
+    for project in $WORK_PROJECTS; do
+        cd $project && sail down
+        cd -
+    done
 }
 
 startQueues() {
