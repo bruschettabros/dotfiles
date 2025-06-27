@@ -1,7 +1,7 @@
 # On exec
 export BREW=true
 export STOW=false
-export MOTD=false
+export MOTD=true
 
 IFS=' '
 export INIT_IFS=$IFS
@@ -30,6 +30,7 @@ export WORK_DIR=$PROJECTS/$WORK
 export WORK_PROJECTS=(
     $WORK_DIR/hush
     $WORK_DIR/tobe
+    $WORK_DIR/leda
     $WORK_DIR/container-chase
 )
 #Php

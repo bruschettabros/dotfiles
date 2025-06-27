@@ -20,5 +20,5 @@ if [[ $MOTD = true ]]; then
     distro=${distros[$RANDOM % ${#distros[@]}]}
 
     figlet -f slant "$WORK" | lolcat -t
-    neofetch --ascii_distro | lolcat -t
+#   neofetch --ascii_distro | lolcat -t
 fi

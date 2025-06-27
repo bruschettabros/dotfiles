@@ -8,21 +8,12 @@ alias c="clear"
 alias v="vim"
 alias pls="fuck"
 alias l="eza  --long --color=always --icons=always -a"
-alias p="cd $PROJECTS; l"
+alias p="cd $WORK_DIR; l"
 alias ll='ls -larh'
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
 alias vz="v ~/dotfiles/.zshrc"
 alias flushdns="sudo systemd-resolve - -flush-caches"
-
-#php
-alias artisan="$WORK_DIR/artisan"
-alias phps="phpstorm"
-alias a="artisan"
-alias at="a tinker"
-alias am="a migrate"
-alias amr="a migrate:rollback"
-alias dump="composer dump"
 
 alias phpx="PHP_IDE_CONFIG='serverName=$XDEBUG_SERVER' \
     php \
@@ -49,8 +40,16 @@ alias sail="./vendor/bin/sail"
 alias s="sail"
 alias sd="s down"
 
+#php
+alias artisan="sail artisan"
+alias phps="phpstorm"
+alias a="artisan"
+alias at="a tinker"
+alias am="a migrate"
+alias amr="a migrate:rollback"
+alias dump="composer dump"
+
 #work
-alias awssso="sh /Users/shaun/Projects/evaluagent/local-dev/aws-access.sh -f  /Users/shaun/Projects/evaluagent/evaluagent/.env"
 
 #Kubernetes
 alias k=kubectl
@@ -152,11 +151,12 @@ usephp() {
 }
 
 startProjects() {
-    cd /home/shaun/Projects/Ceedbox/proxy-manager
+    cd $WORK_DIR/proxy-manager
     docker-compose up -d
     cd -
 
     for project in $WORK_PROJECTS; do
+        echo "Starting $project ..."
         cd $project && sail up -d
         cd -
     done
@@ -164,11 +164,12 @@ startProjects() {
 }
 
 endProjects() {
-    cd /home/shaun/Projects/Ceedbox/proxy-manager
+    cd $WORK_DIR/proxy-manager
     docker-compose down
     cd -
 
     for project in $WORK_PROJECTS; do
+        echo "Ending $project ..."
         cd $project && sail down
         cd -
     done
