@@ -18,7 +18,7 @@ alias flushdns="sudo systemd-resolve - -flush-caches"
 alias phpx="PHP_IDE_CONFIG='serverName=$XDEBUG_SERVER' \
     php \
     -dxdebug.mode=debug \
-    -dxdebug.client_host=127.0.0.1 \
+    -dxdebug.client_host=0.0.0.0 \
     -dxdebug.start_with_request=yes"
 
 alias phpp="PHP_IDE_CONFIG='serverName=$XDEBUG_SERVER' \
@@ -137,11 +137,16 @@ scheckout() {
     git stash pop
 }
 
-merge-develop() {
-    git checkout develop
+merge-current() {
+    git checkout release/current
     git pull
     git checkout -
     git merge develop
+}
+
+checkout-current() {
+    git checkout release/current
+    git pull
 }
 
 #work
