@@ -9,6 +9,7 @@ alias v="vim"
 alias pls="fuck"
 alias l="eza  --long --color=always --icons=always -a"
 alias p="cd $WORK_DIR; l"
+alias ace="cd ~/Projects/Ace"
 alias ll='ls -larh'
 alias uuid=uuidgen
 alias poke="fortune | pokemonsay -n -w 30"
@@ -218,4 +219,11 @@ tatt() {
 }
 tkill() {
     tmux kill-session -t "$1"
+}
+tsave() {
+  ~/.tmux/plugins/tmux-resurrect/scripts/save.sh
+}
+
+tload() {
+  ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
 }
