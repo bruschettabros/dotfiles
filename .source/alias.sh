@@ -70,6 +70,18 @@ resetIfs() {
     IFS=$INIT_IFS
 }
 
+dssh() {
+    docker exec -ti "$1" sh
+}
+
+dps() {
+    docker ps -q --filter="name=$1" | head -1
+}
+
+dsshs() {
+    dssh $(dps "$1")
+}
+
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
@@ -221,9 +233,9 @@ tkill() {
     tmux kill-session -t "$1"
 }
 tsave() {
-  ~/.tmux/plugins/tmux-resurrect/scripts/save.sh
+    ~/.tmux/plugins/tmux-resurrect/scripts/save.sh
 }
 
 tload() {
-  ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
+    ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
 }
