@@ -8,7 +8,8 @@ alias c="clear"
 alias v="vim"
 alias pls="fuck"
 alias l="eza  --long --color=always --icons=always -a"
-alias p="cd $WORK_DIR; l"
+alias p="cd $PROJECTS; l"
+alias w="cd $WORK_DIR; l"
 alias ace="cd ~/Projects/Ace"
 alias ll='ls -larh'
 alias uuid=uuidgen
@@ -191,6 +192,11 @@ endProjects() {
         cd $project && sail down
         cd -
     done
+}
+
+start-jellyfin() {
+    cd ~/Projects/JellyFin
+    docker-compose up
 }
 
 startQueues() {
