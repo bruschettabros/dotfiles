@@ -195,8 +195,11 @@ endProjects() {
 }
 
 start-jellyfin() {
+    cd ~/Projects/NginxReverseProxy/
+    docker-compose up -d
+
     cd ~/Projects/JellyFin
-    docker-compose up
+    docker-compose up -d
 }
 
 startQueues() {
