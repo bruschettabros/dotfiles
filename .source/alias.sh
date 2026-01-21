@@ -174,6 +174,14 @@ startProjects() {
     docker-compose up -d
     cd -
 
+    cd $WORK_DIR/freight-calculator-v2/
+    docker-compose up -d
+    cd -
+
+    cd $WORK_DIR/Monitoring
+    docker-compose up -d
+    cd -
+
     for project in $WORK_PROJECTS; do
         echo "Starting $project ..."
         cd $project && sail up -d
@@ -184,6 +192,14 @@ startProjects() {
 
 endProjects() {
     cd $WORK_DIR/proxy-manager
+    docker-compose down
+    cd -
+
+    cd $WORK_DIR/freight-calculator-v2/
+    docker-compose down
+    cd -
+
+    cd $WORK_DIR/Monitoring
     docker-compose down
     cd -
 
