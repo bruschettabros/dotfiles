@@ -36,6 +36,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gls="gl --stat"
 alias glo="gl --oneline"
 alias gs="git checkout"
+alias gz="lazygit"
 
 #sail
 alias sail="./vendor/bin/sail"
@@ -213,9 +214,11 @@ endProjects() {
 start-jellyfin() {
     cd ~/Projects/NginxReverseProxy/
     docker-compose up -d
+    cd -
 
     cd ~/Projects/JellyFin
     docker-compose up -d
+    cd -
 }
 
 startQueues() {
