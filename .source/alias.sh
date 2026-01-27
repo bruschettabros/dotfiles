@@ -179,7 +179,7 @@ startProjects() {
     docker-compose up -d
     cd -
 
-    cd $WORK_DIR/Monitoring
+    cd $WORK_DIR/Dockhand/
     docker-compose up -d
     cd -
 
