@@ -36,7 +36,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gls="gl --stat"
 alias glo="gl --oneline"
 alias gs="git checkout"
-alias gz="lazygit"
+alias lg="lazygit"
+alias ld="lazydocker"
 
 #sail
 alias sail="./vendor/bin/sail"
