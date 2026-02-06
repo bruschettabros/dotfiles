@@ -212,6 +212,21 @@ endProjects() {
     done
 }
 
+start-home-lab() {
+    for container in $HOME_LAB; do
+        echo "starting $container ..."
+        cd $container && make up
+        cd -
+    done
+}
+end-home-lab() {
+    for container in $HOME_LAB; do
+        echo "starting $container ..."
+        cd $container && make down
+        cd -
+    done
+}
+
 start-jellyfin() {
     cd ~/Projects/NginxReverseProxy/
     docker-compose up -d

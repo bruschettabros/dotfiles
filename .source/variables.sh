@@ -33,6 +33,14 @@ export WORK_PROJECTS=(
     $WORK_DIR/leda
     $WORK_DIR/container-chase
 )
+export HOME_LAB=(
+    #    $PROJECTS/AudioBookShelf
+    #    $PROJECTS/Cloudreve
+    $PROJECTS/Dockhand
+    $PROJECTS/JellyFin
+    #    $PROJECTS/Scanopy
+    $PROJECTS/NginxReverseProxy
+)
 #Php
 export XDEBUG_SERVER=Ceedbox.test
 export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
