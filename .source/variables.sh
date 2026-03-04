@@ -36,10 +36,13 @@ export WORK_PROJECTS=(
 export HOME_LAB=(
     #    $PROJECTS/AudioBookShelf
     #    $PROJECTS/Cloudreve
+    #    $PROJECTS/Scanopy
     $PROJECTS/Dockhand
     $PROJECTS/JellyFin
-    #    $PROJECTS/Scanopy
     $PROJECTS/NginxReverseProxy
+    $PROJECTS/Newt
+    $PROJECTS/Gitea
+    $PROJECTS/Tools
 )
 #Php
 export XDEBUG_SERVER=Ceedbox.test
