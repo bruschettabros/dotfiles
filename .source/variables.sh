@@ -7,10 +7,10 @@ IFS=' '
 export INIT_IFS=$IFS
 
 # Work
-export WORK='Ceedbox'
-export DOMAIN='com'
-export LNAME='collins'
-export FNAME='shaun'
+export WORK='Franscape'
+export DOMAIN='io'
+export LNAME='Collins'
+export FNAME='Shaun'
 
 # Git
 export EMAIL="$FNAME.$LNAME@$WORK.$DOMAIN"
@@ -35,8 +35,8 @@ export WORK_PROJECTS=(
 )
 export HOME_LAB=(
     #    $PROJECTS/AudioBookShelf
-    #    $PROJECTS/Cloudreve
     #    $PROJECTS/Scanopy
+    $PROJECTS/Cloudreve
     $PROJECTS/Dockhand
     $PROJECTS/JellyFin
     $PROJECTS/NginxReverseProxy
@@ -44,8 +44,9 @@ export HOME_LAB=(
     $PROJECTS/Gitea
     $PROJECTS/Tools
 )
+
 #Php
-export XDEBUG_SERVER=Ceedbox.test
+export XDEBUG_SERVER=$WORK.test
 export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
 
 # OS Specific
