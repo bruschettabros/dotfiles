@@ -28,10 +28,7 @@ export PROJECTS=~/Projects
 export WORK_DIR=$PROJECTS/$WORK
 
 export WORK_PROJECTS=(
-    $WORK_DIR/hush
-    $WORK_DIR/tobe
-    $WORK_DIR/leda
-    $WORK_DIR/container-chase
+    #TODO
 )
 export HOME_LAB=(
     #    $PROJECTS/AudioBookShelf
