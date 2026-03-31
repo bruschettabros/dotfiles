@@ -37,6 +37,7 @@ plugins=(
     tmux
     golang
     ssh
+    macos
 )
 
 setVim $EDITOR
