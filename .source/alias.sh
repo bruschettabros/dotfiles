@@ -171,6 +171,12 @@ usephp() {
     brew unlink php && brew link --force php@"$1"
 }
 
+startBackend() {
+    cd ~/Projects/backend-api/
+    docker-compose -f docker-compose-arm.yml up -d
+    cd -
+}
+
 startProjects() {
     cd $WORK_DIR/proxy-manager
     docker-compose up -d
