@@ -203,11 +203,7 @@ end-home-lab() {
 }
 
 startQueues() {
-    //TODO
-    IFS=','
-    timeout="${1:-7200}"
-    phpx artisan queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
-    resetIfs
+    docker exec -it franscape_supervisor php artisan horizon
 }
 
 countpods() {
