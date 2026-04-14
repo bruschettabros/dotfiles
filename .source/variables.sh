@@ -28,7 +28,9 @@ export PROJECTS=~/Projects
 export WORK_DIR=$PROJECTS/$WORK
 
 export WORK_PROJECTS=(
-    #TODO
+    $PROJECTS/customer-portal/
+    $PROJECTS/lesson-finder/
+    $PROJECTS/web-applications/
 )
 export HOME_LAB=(
     #    $PROJECTS/AudioBookShelf
@@ -43,7 +45,7 @@ export HOME_LAB=(
 )
 
 #Php
-export XDEBUG_SERVER=$WORK.test
+export XDEBUG_SERVER=main.backend-api.orb.local
 export XDEBUG_PROFILER_DIR=$PROJECTS/Profiler
 
 # OS Specific

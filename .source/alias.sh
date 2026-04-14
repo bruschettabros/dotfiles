@@ -94,7 +94,6 @@ topcommands() {
 }
 
 update-all() {
-    mas upgrade
     brew update
     omz update
 }
@@ -177,45 +176,15 @@ startBackend() {
     cd -
 }
 
-startProjects() {
-    cd $WORK_DIR/proxy-manager
-    docker-compose up -d
-    cd -
-
-    cd $WORK_DIR/freight-calculator-v2/
-    docker-compose up -d
-    cd -
-
-    cd $WORK_DIR/Dockhand/
-    docker-compose up -d
-    cd -
-
+startFrontend() {
     for project in $WORK_PROJECTS; do
         echo "Starting $project ..."
-        cd $project && sail up -d
+        cd $project
+        git pull
+        nvm use 18 && npm install && npm run build
         cd -
     done
 
-}
-
-endProjects() {
-    cd $WORK_DIR/proxy-manager
-    docker-compose down
-    cd -
-
-    cd $WORK_DIR/freight-calculator-v2/
-    docker-compose down
-    cd -
-
-    cd $WORK_DIR/Monitoring
-    docker-compose down
-    cd -
-
-    for project in $WORK_PROJECTS; do
-        echo "Ending $project ..."
-        cd $project && sail down
-        cd -
-    done
 }
 
 start-home-lab() {
@@ -233,17 +202,8 @@ end-home-lab() {
     done
 }
 
-start-jellyfin() {
-    cd ~/Projects/NginxReverseProxy/
-    docker-compose up -d
-    cd -
-
-    cd ~/Projects/JellyFin
-    docker-compose up -d
-    cd -
-}
-
 startQueues() {
+    //TODO
     IFS=','
     timeout="${1:-7200}"
     phpx artisan queue:work --timeout=$timeout --queue="${WORK_QUEUES[*]}"
