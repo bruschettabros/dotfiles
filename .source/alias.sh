@@ -205,6 +205,9 @@ end-home-lab() {
 startQueues() {
     docker exec -it franscape_supervisor php artisan horizon
 }
+startStripe() {
+    stripe listen --forward-to http://main.backend-api.orb.local/stripe/webhook
+}
 
 countpods() {
     kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
