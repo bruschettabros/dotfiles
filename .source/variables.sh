@@ -33,8 +33,6 @@ export WORK_PROJECTS=(
     $PROJECTS/web-applications/
 )
 export HOME_LAB=(
-    #    $PROJECTS/AudioBookShelf
-    #    $PROJECTS/Scanopy
     $PROJECTS/Cloudreve
     $PROJECTS/Dockhand
     $PROJECTS/JellyFin
@@ -42,6 +40,7 @@ export HOME_LAB=(
     $PROJECTS/Newt
     $PROJECTS/Gitea
     $PROJECTS/Tools
+    $PROJECTS/Vikunja/
 )
 
 #Php
