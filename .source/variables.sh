@@ -33,14 +33,10 @@ export WORK_PROJECTS=(
     $PROJECTS/web-applications/
 )
 export HOME_LAB=(
-    $PROJECTS/Cloudreve
     $PROJECTS/Dockhand
     $PROJECTS/JellyFin
     $PROJECTS/NginxReverseProxy
     $PROJECTS/Newt
-    $PROJECTS/Gitea
-    $PROJECTS/Tools
-    $PROJECTS/Vikunja/
 )
 
 #Php
