@@ -209,6 +209,11 @@ startStripe() {
     stripe listen --forward-to http://main.backend-api.orb.local/stripe/webhook
 }
 
+restartOrb() {
+    orbctl stop
+    orbctl start
+}
+
 countpods() {
     kubectl get pods | grep Running | awk '{print $1}' | sed 's/\-.....$//g' | sort | uniq -c
 }
