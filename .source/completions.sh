@@ -1,5 +1,6 @@
 source <(kubectl completion zsh)
 source <(stern --completion zsh)
+source <(herdr completion zsh)
 eval $(thefuck --alias)
 brew_prefix=$(brew --prefix)
 source $brew_prefix/share/zsh-autosuggestions/zsh-autosuggestions.zsh
