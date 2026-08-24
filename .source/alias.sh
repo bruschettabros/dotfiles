@@ -95,6 +95,7 @@ topcommands() {
 
 update-all() {
     brew update
+    brew upgrade
     omz update
 }
 
