@@ -127,6 +127,10 @@ learn() {
     cheat "$1" ":learn"
 }
 
+torDownload() {
+    npx torlnk
+}
+
 #vim
 vs() {
     "$@" | $EDITOR -
