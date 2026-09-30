@@ -131,6 +131,10 @@ torDownload() {
     npx torlnk
 }
 
+cl() {
+    claude "$@"
+}
+
 #vim
 vs() {
     "$@" | $EDITOR -

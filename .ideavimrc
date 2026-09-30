@@ -157,3 +157,5 @@ nnoremap <leader>cc :action copilot.requestCompletions<CR>
 
 " Which key:
 "source ~/ideavim/whichkey.vim
+" Install vim-commentary — added by Vim Coach
+Plug 'tpope/vim-commentary'
