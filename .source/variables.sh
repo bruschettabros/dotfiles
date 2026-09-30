@@ -38,7 +38,7 @@ export HOME_LAB=(
     $PROJECTS/JellyFin
     $PROJECTS/NginxReverseProxy
     $PROJECTS/Newt
-    #$PROJECTS/Music
+    $PROJECTS/Music
 )
 
 #Php
