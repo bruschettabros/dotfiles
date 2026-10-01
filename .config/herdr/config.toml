@@ -11,7 +11,7 @@ onboarding = false
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
 #                  vesper
 # Matches the Catppuccin Mocha palette used in .tmux.conf's status bar.
-name = "catppuccin"
+name = "dracula"
 
 # Follow host terminal light/dark appearance and switch Herdr UI themes.
 # Existing manual behavior is unchanged unless this is true.
@@ -27,6 +27,7 @@ name = "catppuccin"
 # red = "#ff6188"
 # green = "#a6e3a1"
 
+auto_switch = false
 [terminal]
 # Executable used for new interactive panes.
 # Empty means $SHELL, then /bin/sh.
@@ -136,6 +137,13 @@ workspace_picker = ["prefix+w", "shift+up"]
 # navigate_pane_down = "j"
 # navigate_pane_up = "k"
 # navigate_pane_right = "l"     # right arrow always focuses the pane to the right
+
+# Vim-style space selection: j/k move through spaces in navigate mode (arrows still work).
+# Pane up/down moves to J/K so they don't clash; prefix+h/j/k/l still moves panes anywhere.
+navigate_workspace_up = ["k", "up"]
+navigate_workspace_down = ["j", "down"]
+navigate_pane_up = "shift+k"
+navigate_pane_down = "shift+j"
 
 # Custom commands use the same binding syntax.
 # type = "shell" runs detached in the background.
@@ -297,6 +305,7 @@ status_indicators = "symbols"
 # delivery = "off"
 # delay_seconds = 1
 
+delivery = "herdr"
 [ui.toast.herdr]
 # position = "bottom-right"
 
