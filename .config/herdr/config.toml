@@ -178,6 +178,48 @@ type = "plugin_action"
 command = "ntindle.herdr-resurrect.restore"
 description = "resurrect: restore last snapshot"
 
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "navigator: fuzzy jump"
+
+[[keys.command]]
+key = "prefix+u"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+description = "reviewr: toggle diff review pane"
+
+[[keys.command]]
+key = "prefix+shift+a"
+type = "plugin_action"
+command = "annotate.capture"
+description = "annotate: comment on selection"
+
+[[keys.command]]
+key = "prefix+i"
+type = "plugin_action"
+command = "herdr-lazygit.open"
+description = "lazygit: toggle split pane"
+
+[[keys.command]]
+key = "prefix+m"
+type = "plugin_action"
+command = "ray.plugin-manager.open"
+description = "plugin manager popup"
+
+[[keys.command]]
+key = "prefix+shift+u"
+type = "plugin_action"
+command = "herdr-agent-usage.refresh"
+description = "refresh all agent quotas"
+
+[[keys.command]]
+key = "prefix+shift+q"
+type = "plugin_action"
+command = "herdr-agent-usage.open-settings"
+description = "open agent quota settings"
+
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
 # [keys.indexed]
@@ -297,6 +339,7 @@ tab_bar_position = "bottom"
 
 # Background notification popup delivery
 status_indicators = "symbols"
+agent_panel_sort = "spaces" # herdr-agent-usage
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts
@@ -384,4 +427,8 @@ rows = [
   ["branch", "git_status"],
   ["$usage"],
 ]
+
+[ui.sidebar.agents]
+row_gap = 0 # herdr-agent-usage
+rows = [[{ token = "$quota_group", bold = true, dim = false }], [{ token = "$quota_icon", fg = "#e9e9f0", bold = false, dim = false, rules = [{ contains = "⁠", fg = "#94e2d5" }, { contains = "⁡", fg = "#f9e2af" }, { contains = "⁢", fg = "#f38ba8" }] }, { token = "$quota_provider_model", fg = "#e9e9f0", bold = true, dim = false }], [{ token = "$quota_share_5h_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_share_5h_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_share_5h_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_share_5h_unknown", bold = false, dim = false }], [{ token = "$quota_share_week_inline_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_share_week_inline_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_share_week_inline_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_share_week_inline_unknown", bold = false, dim = false }, { token = "$quota_share_week_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_share_week_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_share_week_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_share_week_unknown", bold = false, dim = false }], [{ token = "$quota_share_month_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_share_month_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_share_month_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_share_month_unknown", bold = false, dim = false }], [{ token = "$quota_model", fg = "#e9e9f0", bold = false, dim = false }], [{ token = "$quota_topic", bold = false, dim = false }], [{ token = "$quota_error", fg = "#e4b957", bold = false, dim = false }], [{ token = "$quota_context_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_context_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_context_danger", fg = "#df919b", bold = false, dim = false }], [{ token = "$quota_5h_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_5h_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_5h_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_5h_unknown", bold = false, dim = false }], [{ token = "$quota_week_inline_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_week_inline_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_week_inline_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_week_inline_unknown", bold = false, dim = false }, { token = "$quota_week_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_week_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_week_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_week_unknown", bold = false, dim = false }], [{ token = "$quota_month_normal", fg = "#98b17d", bold = false, dim = false }, { token = "$quota_month_warning", fg = "#dec27f", bold = false, dim = false }, { token = "$quota_month_danger", fg = "#df919b", bold = false, dim = false }, { token = "$quota_month_unknown", bold = false, dim = false }], [{ token = "$quota_nest_gap", bold = false, dim = false }]] # herdr-agent-usage-row
 # --- end ez-corp.space-usage ---

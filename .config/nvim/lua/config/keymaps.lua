@@ -5,14 +5,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Copilot
-keymap.set("i", "<C-l>", "<M-l>", { desc = "Copilot accept suggestion", remap = true }) -- Easier to reach than Alt-l
-keymap.set("i", "<C-j>", "<M-]>", { desc = "Copilot next suggestion", remap = true }) -- Easier to reach than Alt-]
-keymap.set("i", "<C-k>", "<M-[>", { desc = "Copilot prev suggestion", remap = true }) -- Easier to reach than Alt-[
-keymap.set("n", "<leader>cp", "<cmd>Copilot panel<CR>", { desc = "Copilot panel" }) -- Quick access to panel
-keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", { desc = "Copilot enable" }) -- Toggle Copilot on
-keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", { desc = "Copilot disable" }) -- Toggle Copilot off
-
 -- Better window navigation
 keymap.set("n", "<C-h>", "<C-w>h", opts) -- Left window
 keymap.set("n", "<C-j>", "<C-w>j", opts) -- Down window

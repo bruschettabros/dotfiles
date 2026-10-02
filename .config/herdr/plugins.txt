@@ -1,0 +1,9 @@
+Crokily/herdr-lazygit
+ezcorp-org/herdr-pc-ram-and-cpu-usage-overlay
+levi-qiao/herdr-agent-usage
+ntindle/herdr-resurrect
+persiyanov/herdr-reviewr
+plannotator/herdr-annotate
+speardragon/herdr-plugin-manager
+thanhdat77/herdr-navigator
+yankewei/herdr-focus-notify

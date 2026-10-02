@@ -1,6 +1,23 @@
 .config/nvim/lazy-lock.json
 .idea/
 .idea/*
-.config/
-.config/*
 /.claude
+
+# .config: ignore everything except the apps listed here
+/.config/*
+!/.config/alacritty/
+!/.config/herdr/
+!/.config/kitty/
+!/.config/neofetch/
+!/.config/nvim/
+
+# herdr: track config + plugin list/settings only, ignore runtime state and downloaded plugin code
+/.config/herdr/*
+!/.config/herdr/config.toml
+!/.config/herdr/plugins.txt
+!/.config/herdr/install-plugins.sh
+!/.config/herdr/plugins/
+/.config/herdr/plugins/*
+!/.config/herdr/plugins/config/
+/.config/herdr/plugins/config/herdr-lazygit/generated.yml
+/.config/herdr/plugins/config/herdr-lazygit/layout-*.yml

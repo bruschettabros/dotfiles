@@ -3,13 +3,6 @@ local wk = require("which-key")
 -- Custom WhichKey mappings
 wk.register({
   ["<leader>"] = {
-    -- Copilot section
-    c = {
-      name = "✨ Copilot",
-      p = { "<cmd>Copilot panel<CR>", "Open Panel" },
-      e = { "<cmd>Copilot enable<CR>", "Enable" },
-      d = { "<cmd>Copilot disable<CR>", "Disable" },
-    },
     -- Buffer section
     b = {
       name = "󰈙 Buffers",
@@ -29,11 +22,6 @@ wk.register({
 
 -- Document existing keymaps for better discoverability
 wk.register({
-  -- Insert mode mappings for Copilot
-  ["<C-l>"] = { name = "Accept suggestion", mode = "i" },
-  ["<C-j>"] = { name = "Next suggestion", mode = "i" },
-  ["<C-k>"] = { name = "Previous suggestion", mode = "i" },
-
   -- Window navigation
   ["<C-h>"] = { name = "󰌋 Left window", mode = { "n", "t" } },
   ["<C-j>"] = { name = "󰌋 Bottom window", mode = { "n", "t" } },

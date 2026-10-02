@@ -12,4 +12,7 @@ brew bundle install --file=~/.dotfiles/Brewfile.$OSTYPE || echo "No Brewfile for
 #Stow dotfiles
 cd ~/.dotfiles
 stow .
+
+#Herdr plugins
+~/.config/herdr/install-plugins.sh || echo "herdr plugin install failed"
 exec zsh
