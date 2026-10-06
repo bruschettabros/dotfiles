@@ -118,3 +118,6 @@ instance = "Alacritty"
 # Window hints
 [hints]
 alphabet = "jfkdls;ahgurieowpq"
+
+[terminal]
+shell.program = '/opt/homebrew/bin/herdr'

@@ -13,6 +13,11 @@ vim.opt.wrap = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.smartindent = true
 vim.opt.autoread = true
+vim.opt.scrolloff = 10 -- as in .ideavimrc
+
+-- prettier (formatting.prettier extra) only where the project has a prettier config,
+-- so auto-save doesn't reformat files in repos that don't use it
+vim.g.lazyvim_prettier_needs_config = true
 
 -- .NET SDK lives in ~/.dotnet (not on the shell PATH); needed by omnisharp
 local dotnet_root = vim.fn.expand("~/.dotnet")

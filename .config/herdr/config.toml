@@ -202,6 +202,35 @@ type = "plugin_action"
 command = "herdr-lazygit.open"
 description = "lazygit: toggle split pane"
 
+# herdr-nvim (shifted: prefix+e / prefix+o are herdr defaults edit_scrollback / open_notification_target)
+# per-tab nvim sidebar (your normal ~/.config/nvim) + picker of files the agent touched
+[[keys.command]]
+key = "prefix+shift+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "nvim sidebar"
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "open file from agent output"
+
+# termscope: pick a file or URL visible in this tab's panes and open it (nvim split / browser).
+# Prefixed rather than its suggested ctrl+shift+a / ctrl+e, which would steal ctrl+e (end of line)
+# from shells, nvim and Claude Code. (prefix+shift+t is herdr's default rename_tab.)
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "termscope.open"
+description = "termscope: visible-screen file picker"
+
+[[keys.command]]
+key = "prefix+y"
+type = "plugin_action"
+command = "termscope.open-links"
+description = "termscope: visible-screen link picker"
+
 [[keys.command]]
 key = "prefix+m"
 type = "plugin_action"

@@ -1,5 +1,7 @@
+ChmaraX/herdr-nvim
 Crokily/herdr-lazygit
 ezcorp-org/herdr-pc-ram-and-cpu-usage-overlay
+iurysza/termscope
 levi-qiao/herdr-agent-usage
 ntindle/herdr-resurrect
 persiyanov/herdr-reviewr
