@@ -86,11 +86,11 @@ dsshs() {
 }
 
 mkcd() {
-    mkdir -p "$1" && cd "$1"
+    mkdir -p "$1" && cd "$1" || exit
 }
 
 topcommands() {
-    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -$1
+    history | awk '{print $2}' | sort | uniq -c | sort -rn | head -"$1"
 }
 
 update-all() {
@@ -103,9 +103,9 @@ generate_brewfile() {
     # This generates a script that can be installed via:
     # brew bundle install --file ~/Brewfile
     rm -f ~/dotfiles/Brewfile
-    rm -f ~/dotfiles/Brewfile.$OSTYPE
+    rm -f ~/dotfiles/Brewfile."$OSTYPE"
     brew bundle dump
-    mv Brewfile Brewfile.$OSTYPE
+    mv Brewfile Brewfile."$OSTYPE"
 }
 
 fresize() {
@@ -180,18 +180,18 @@ usephp() {
 }
 
 startBackend() {
-    cd ~/Projects/backend-api/
+    cd ~/Projects/backend-api/ || exit
     docker-compose -f docker-compose-arm.yml up -d
-    cd -
+    cd - || exit
 }
 
 startFrontend() {
     for project in $WORK_PROJECTS; do
         echo "Starting $project ..."
-        cd $project
+        cd $project || exit
         git pull
         nvm use 18 && npm install && npm run build
-        cd -
+        cd - || exit
     done
 
 }
@@ -200,14 +200,14 @@ start-home-lab() {
     for container in $HOME_LAB; do
         echo "starting $container ..."
         cd $container && make up
-        cd -
+        cd - || exit
     done
 }
 end-home-lab() {
     for container in $HOME_LAB; do
         echo "starting $container ..."
         cd $container && make down
-        cd -
+        cd - || exit
     done
 }
 
