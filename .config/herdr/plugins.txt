@@ -6,6 +6,7 @@ levi-qiao/herdr-agent-usage
 ntindle/herdr-resurrect
 persiyanov/herdr-reviewr
 plannotator/herdr-annotate
+riq0h/tab-process-name
 speardragon/herdr-plugin-manager
 thanhdat77/herdr-navigator
 yankewei/herdr-focus-notify
