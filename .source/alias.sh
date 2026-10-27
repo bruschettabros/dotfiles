@@ -37,6 +37,7 @@ alias gls="gl --stat"
 alias glo="gl --oneline"
 alias gs="git checkout"
 alias lg="lazygit"
+alias gg="lg"
 alias ld="lazydocker"
 
 #sail
