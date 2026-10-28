@@ -314,6 +314,12 @@ command = "ntindle.herdr-resurrect.open-space"
 description = "resurrect: open saved space"
 
 [[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "herdr-automatic-rename.reset"
+description = "hand this tab's name back to automatic naming"
+
+[[keys.command]]
 key = "prefix+shift+c"
 type = "plugin_action"
 command = "ez-corp.space-usage.monitor"
@@ -382,6 +388,8 @@ description = "system monitor"
 # Ask for a tab name before creating a new tab.
 # Set false to create tabs immediately with generated names.
 # prompt_new_tab_name = true
+# Off so herdr-automatic-rename names new tabs; a typed name would lock the tab.
+prompt_new_tab_name = false
 
 # Ask for a workspace name before interactive creation.
 # prompt_new_workspace_name = false
