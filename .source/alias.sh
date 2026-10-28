@@ -243,7 +243,7 @@ mtgGenerate() {
 
 #Video
 streamVideo() {
-    yt-dlp -o - "$1" | $vlc -
+    yt-dlp --cookies-from-browser "$BROWSER_NAME" -o - "$1" | $vlc -
 }
 
 downloadVideo() {

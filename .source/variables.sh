@@ -23,6 +23,7 @@ export HOMEBREW_NO_ASK=true
 export EDITOR='nvim'
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
+export BROWSER_NAME='brave'
 
 # Misc
 export PROJECTS=~/Projects
