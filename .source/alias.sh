@@ -66,6 +66,10 @@ alias t="tmux"
 alias tl="tmux ls"
 alias td="tmux detach"
 
+#Herdr
+alias herdrPluginInstall="~/.config/herdr/install-plugins.sh"
+alias herdrReload="herdr server reload-config"
+
 #WSL
 alias wslhost="/mnt/c/Windows/System32/drivers/etc/hosts"
 

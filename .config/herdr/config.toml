@@ -86,6 +86,27 @@ previous_tab = "shift+left"
 next_tab = ["prefix+n", "shift+right"]
 workspace_picker = ["prefix+w", "shift+up"]
 
+# --- herdr actions that ship unbound ---
+# tmux: bind ; last-pane
+last_pane = "prefix+semicolon"
+# tmux: ( / ) switch-client -p / -n
+previous_workspace = "prefix+("
+next_workspace = "prefix+)"
+switch_workspace = "prefix+alt+1..9"
+previous_agent = "prefix+comma"
+next_agent = "prefix+period"
+focus_agent = "alt+1..9"
+move_tab_previous = "prefix+shift+left"
+move_tab_next = "prefix+shift+right"
+# tmux default: prefix C-arrow resizes without entering a mode
+resize_pane_left = "prefix+ctrl+left"
+resize_pane_down = "prefix+ctrl+down"
+resize_pane_up = "prefix+ctrl+up"
+resize_pane_right = "prefix+ctrl+right"
+clear_pane = "prefix+ctrl+l"
+open_worktree = "prefix+ctrl+g"
+remove_worktree = "prefix+ctrl+x"
+
 # Prefix-mode actions
 # help = "prefix+?"
 # settings = "prefix+s"
@@ -248,6 +269,55 @@ key = "prefix+shift+q"
 type = "plugin_action"
 command = "herdr-agent-usage.open-settings"
 description = "open agent quota settings"
+
+# --- plugin actions that had no key ---
+[[keys.command]]
+key = "prefix+ctrl+p"
+type = "plugin_action"
+command = "herdr-floax.instances"
+description = "floax: choose floating shell"
+
+[[keys.command]]
+key = "prefix+shift+f"
+type = "plugin_action"
+command = "herdr-navigator.jump-back"
+description = "navigator: jump back"
+
+[[keys.command]]
+key = "prefix+shift+i"
+type = "plugin_action"
+command = "herdr-lazygit.open-tab"
+description = "lazygit: own tab"
+
+[[keys.command]]
+key = "prefix+shift+m"
+type = "plugin_action"
+command = "annotate.last"
+description = "annotate: agent's last message"
+
+[[keys.command]]
+key = "prefix+shift+s"
+type = "plugin_action"
+command = "annotate.send-archive"
+description = "annotate: send annotations to agent and archive"
+
+[[keys.command]]
+key = "prefix+ctrl+w"
+type = "plugin_action"
+command = "ntindle.herdr-resurrect.save-space"
+description = "resurrect: save this space as…"
+
+[[keys.command]]
+key = "prefix+ctrl+o"
+type = "plugin_action"
+command = "ntindle.herdr-resurrect.open-space"
+description = "resurrect: open saved space"
+
+[[keys.command]]
+key = "prefix+shift+c"
+type = "plugin_action"
+command = "ez-corp.space-usage.monitor"
+description = "system monitor"
 
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
